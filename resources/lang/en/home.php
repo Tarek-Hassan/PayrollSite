@@ -31,7 +31,7 @@ return [
     'see_how' => 'See How',
     'support_you' => 'Could Supports You',
     // <!-- Start How it works Area -->
-    'how' => 'How',
+    'how_works_area' => 'How',
     'works' => 'Works',
     'view_all_Services'=>'View All Services',
     'job_applicants'=>'Job Applicants',
@@ -55,5 +55,10 @@ return [
     'follow'=>'Follow',
     'rights'=>'All Rights Reserved by',
     'company_name'=>'Sana Soft Ltd.',
+        //footer
+        'address_icon'=>'A',
+        'phone_icon'=>'P',
+        'fax_icon'=>'X',
+        'email_icon'=>'E',
 ];
 // {{ trans('home.company_name') }}

@@ -1,4 +1,5 @@
 <!doctype html>
+
 <html lang="{{$lang}}" dir="{{$dir}}">
 
     <head>
@@ -82,16 +83,16 @@
                     <div class="col-lg-5 col-md-6">
                         <ul class="topbar-social-list">
                             <li>
-                                <a href="https://www.facebook.com/" target="_blank"><i class="flaticon-facebook"></i></a>
+                                <a href="{{$settings->facebook}}" target="_blank"><i class="flaticon-facebook"></i></a>
                             </li>
                             <li>
-                                <a href="https://twitter.com/" target="_blank"><i class="flaticon-twitter"></i></a>
+                                <a href="{{$settings->twitter}}" target="_blank"><i class="flaticon-twitter"></i></a>
                             </li>
                             <li>
-                                <a href="https://www.instagram.com/" target="_blank"><i class="flaticon-instagram"></i></a>
+                                <a href="{{$settings->instagram}}" target="_blank"><i class="flaticon-instagram"></i></a>
                             </li>
                             <li>
-                                <a href="https://linkedin.com/" target="_blank"><i class="flaticon-linkedin"></i></a>
+                                <a href="{{$settings->linkedin}}" target="_blank"><i class="flaticon-linkedin"></i></a>
                             </li>
                         </ul>
                     </div>
@@ -109,7 +110,7 @@
                             <li class="dropdown language-option">
                                 <button class="dropdown-toggle" type="button" id="language1" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <i class="flaticon-worldwide"></i>
-                                    <span class="lang-name"></span>
+                                    <span class="lang-namee">{{($dir == 'rtl')?'العربيّة':'English'}}</span>
                                 </button>
                                 <div class="dropdown-menu language-dropdown-menu" aria-labelledby="language1">
                                     <a class="dropdown-item" href="{{ route('change-lang',['lang'=>'en']) }}">
@@ -342,7 +343,7 @@
             <!-- Start title Area -->
             <div class="container">
                 <div class="section-title">
-                    <h2>{{trans('home.how') }} <span style="color:#b42025;">{{ trans('home.company') }}</span> {{ trans('home.works') }}</h2>
+                    <h2>{{trans('home.how_works_area') }} <span style="color:#b42025;">{{ trans('home.company') }}</span> {{ trans('home.works') }}</h2>
                     <p>We provide our services to serve both parties of the HR Community </p>
                     <p>Employeers who are seeking outsourcing HR services, recruitment and outsource hiring </p> 
                     <p>Job Seekers who try to connect with employeers that need thier experties and talent</p>
@@ -859,9 +860,10 @@
                         <div class="newsletter-content">
                             <h3>{{ trans('home.subscribe_h3') }}</h3>
                             <p>{{ trans('home.subscribe_p') }}</p>
-                            <form class="newsletter-form" data-bs-toggle="validator">
+                            <form class="newsletter-form" action="{{route('subscribe.store')}}" method="POST" >
+                                @csrf
                                 <div class="form-group">
-                                    <input type="email" class="input-newsletter" placeholder="{{trans('home.input_newsletter')}}" name="EMAIL" required autocomplete="off">
+                                    <input type="email" class="input-newsletter" placeholder="{{trans('home.input_newsletter')}}" name="email" required autocomplete="off">
                                 </div>
 
                                 <button type="submit" class="default-btn">{{ trans('home.subscribe_btn') }} <i class="flaticon-send"></i></button>
@@ -896,31 +898,31 @@
                                 <a href="index.html"><img src="{{asset("assets/$dir/images/logo-2.png")}}" alt="image"></a>
                             </div>
                             <p>
-                                At First, we envision achieving market leadership in the provision of HR services where we’d set the benchmark for manpower outsourcing and enable our clients to achieve their objectives and enhance their work efficiency.
+                                {{$settings->about}}
                             </p>
                             <ul class="widget-social-links">
                                 <li><span>{{ trans('home.follow') }}:</span></li>
 
                                 <li>
-                                    <a href="https://www.facebook.com/" target="_blank">
+                                    <a href="{{$settings->facebook}}" target="_blank">
                                         <i class="flaticon-facebook"></i>
                                     </a>
                                 </li>
 
                                 <li>
-                                    <a href="https://twitter.com/" target="_blank">
+                                    <a href="{{$settings->twitter}}" target="_blank">
                                         <i class="flaticon-twitter"></i>
                                     </a>
                                 </li>
 
                                 <li>
-                                    <a href="https://www.instagram.com/" target="_blank">
+                                    <a href="{{$settings->instagram}}" target="_blank">
                                         <i class="flaticon-instagram"></i>
                                     </a>
                                 </li>
 
                                 <li>
-                                    <a href="https://www.linkedin.com/" target="_blank">
+                                    <a href="{{$settings->linkedin}}" target="_blank">
                                         <i class="flaticon-linkedin"></i>
                                     </a>
                                 </li>
@@ -963,28 +965,28 @@
                             
                             <ul class="widget-info">
                                 <li>
-                                    <i style="font-size:18px; font-weight:900 ; color:white;">A</i>
-                                    5 Gameat El Dowal El Arabia Street, Mohandessin, Cairo, Egypt
+                                    <i style="font-size:18px; font-weight:900 ; color:white;">{{ trans('home.address_icon') }}</i>
+                                    {{$settings->address}}
                                 </li>
 
                                 <li>
-                                    <i style="font-size:18px; font-weight:900 ; color:white;">P</i>
-                                    <a href="tel:00202334602205">(+20)-2-3346-02205</a>
+                                    <i style="font-size:18px; font-weight:900 ; color:white;">{{ trans('home.phone_icon') }}</i>
+                                    <a href="tel:{{$settings->phone}}">{{$settings->phone}}</a>
                                 </li>
 
                                 <li>
-                                    <i style="font-size:18px; font-weight:900 ; color:white;">X</i>
-                                    <a href="tel:0020233462474">(+20)-2-3346-2474</a>
+                                    <i style="font-size:18px; font-weight:900 ; color:white;">{{ trans('home.fax_icon') }}</i>
+                                    <a href="tel:{{$settings->fax}}">{{$settings->fax}}</a>
                                 </li>
 
                                 <li>
-                                    <i style="font-size:18px; font-weight:900 ; color:white;">E</i>
-                                    <a href="mailto:info@first-egyptian.com">info@first-egyptian.com</a>
+                                    <i style="font-size:18px; font-weight:900 ; color:white;">{{ trans('home.email_icon') }}</i>
+                                    <a href="mailto:{{$settings->email}}">{{$settings->email}}</a>
                                 </li>
                             </ul>
                         </div>
                         <div>
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3453.330248383464!2d31.200968274905293!3d30.056066818021087!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1458413be80d13b1%3A0x49ed5c2df1aac352!2z2KfZhNi02LHZg9ipINin2YTZhdi12LHZitipINin2YTYp9mI2YTZiSDZhNmE2YfZhtiv2LPYqSDZgdix2LPYqi0gRmlyc3QgRWd5cHRpYW4gRW5naW5lZXJpbmc!5e0!3m2!1sen!2seg!4v1690287534692!5m2!1sen!2seg" width="300" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>                        </div>
+                            {!!$settings->map!!}
                     </div>
                 </div>
             </div>

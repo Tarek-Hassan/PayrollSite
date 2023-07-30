@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\{HomeController,SubscribeController};
 use App\Http\Controllers\LangController;
 
 /*
@@ -14,7 +15,7 @@ use App\Http\Controllers\LangController;
 |
 */
 
-Route::get('/', function () {
-    return view('layouts.home');
-});
+
+Route::get('/',HomeController::class);
+Route::post('subscribe',SubscribeController::class)->name('subscribe.store');
 Route::get('/lang/{lang}', LangController::class)->name('change-lang');

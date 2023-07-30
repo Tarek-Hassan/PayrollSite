@@ -29,7 +29,7 @@ return [
     'see_how' => 'كيف تنمي و تساعد ',
     'support_you' => 'شركائها',
     // <!-- Start How it works Area -->
-    'how' => 'كيف تقوم ',
+    'how_works_area' => 'كيف تقوم ',
     'works' => 'بتقديم خدماتها ',
     'view_all_Services'=>'للاطلاع علي جميع خدماتنا',
     'job_applicants'=>'الباحثين عن الفرص',
@@ -53,7 +53,12 @@ return [
     'follow'=>'تابعنا',
     'rights'=>'جميع حقوق الملكية الفكرية محفوظة لصالح',
     'company_name'=>'Sana Soft Ltd.',
+    //footer
+    'address_icon'=>'ع',
+    'phone_icon'=>'هـ',
+    'fax_icon'=>'ف',
+    'email_icon'=>'ب',
 
 ];
-// {{ trans('home.contact') }}
+// {{ trans('home.address_icon') }}
 // {{($dir == 'rtl')?'ltr':''}}
