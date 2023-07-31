@@ -60,6 +60,10 @@
                     url('{{asset("assets/$dir/fonts/remixicon.svg?t=1590207869815#remixicon")}}') format('svg'); /* iOS 4.1- */
                     font-display: swap;
                     }
+                .review-info .image{
+                    width: 100px;
+                    height: 100px;
+                }
         </style>
     </head>
 
@@ -624,46 +628,15 @@
 
             <div class="container-fluid">
                 <div class="top-category-slides owl-carousel owl-theme">
-
-                    <div class="top-category-card">
-                        <div class="category-image">
-                            <img src="{{asset("assets/$dir/images/category/category-2.png")}}" alt="image">
+                    @foreach($services as $service)                        
+                        <div class="top-category-card">
+                            <div class="category-image">
+                                <img src="{{$service->getFirstMediaUrl('services')}}" alt="image">
+                            </div>
+                            <h3><a href="#">{{$service->title}}</a> <span></span></h3>
                         </div>
-                        
-                        <h3><a href="job-listing-2.html">Payroll Administration</a> <span></span></h3>
-                    </div>
+                    @endforeach
 
-                    <div class="top-category-card">
-                        <div class="category-image">
-                            <img src="{{asset("assets/$dir/images/category/category-3.png")}}" alt="image">
-                        </div>
-                        
-                        <h3><a href="job-listing-2.html">Recruitment Services</a> <span></span></h3>
-                    </div>
-
-                    <div class="top-category-card">
-                        <div class="category-image">
-                            <img src="{{asset("assets/$dir/images/category/category-4.png")}}" alt="image">
-                        </div>
-                        
-                        <h3><a href="job-listing-2.html">Local Outsourcing</a> <span></span></h3>
-                    </div>
-
-                    <div class="top-category-card">
-                        <div class="category-image">
-                            <img src="{{asset("assets/$dir/images/category/category-6.png")}}" alt="image">
-                        </div>
-                        
-                        <h3><a href="job-listing-2.html">Expat Outsourcing</a> <span></span></h3>
-                    </div>
-
-                    <div class="top-category-card">
-                        <div class="category-image">
-                            <img src="{{asset("assets/$dir/images/category/category-7.png")}}" alt="image">
-                        </div>
-                        
-                        <h3><a href="job-listing-2.html">Personnel Services</a> <span></span></h3>
-                    </div>
 
                 </div>
             </div>
@@ -743,110 +716,32 @@
                     </div>
                 </div>
 
+              
                 <div class="review-slides owl-carousel owl-theme">
-                    <div class="review-single-card">
-                        <div class="review-info">
-                            <div class="image">
-                                <img src="{{asset("assets/$dir/images/review/review-1.jpg")}}" alt="image">
-                            </div>
 
-                            <div class="content">
-                                <h3>Camelia Renesa</h3>
-                                <span>IT Specialist</span>
+                    @foreach($partenerReviews as $partener)
+                        <div class="review-single-card">
+                            <div class="review-info">
+                                <div class="image">
+                                    <img src="{{$partener->getFirstMediaUrl('partener_reviews')}}" alt="image">
+                                </div>
+                                <div class="content">
+                                    <h3>{{$partener->name}}</h3>
+                                    <span>{{$partener->postion}}</span>
 
-                                <div class="rating">
-                                    <i class="flaticon-star"></i>
-                                    <i class="flaticon-star"></i>
-                                    <i class="flaticon-star"></i>
-                                    <i class="flaticon-star"></i>
-                                    <i class="flaticon-star"></i>
+                                    <div class="rating">
+                                        @for($i=0;$i<$partener->rate;$i++)
+                                            <i class="flaticon-star"></i>
+                                        @endfor
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="review-content">
-                            <i class="flaticon-left-quote"></i>
-                            <p>First Egyptian helps me a lot to get my first job & achieve my goal also pushes me to establish myself, I'm really grateful to First Egyptian.</p>
-                        </div>
-                    </div>
-
-                    <div class="review-single-card">
-                        <div class="review-info">
-                            <div class="image">
-                                <img src="{{asset("assets/$dir/images/review/review-2.jpg")}}" alt="image">
-                            </div>
-
-                            <div class="content">
-                                <h3>Jennifer Rose</h3>
-                                <span>Digital Marketer</span>
-
-                                <div class="rating">
-                                    <i class="flaticon-star"></i>
-                                    <i class="flaticon-star"></i>
-                                    <i class="flaticon-star"></i>
-                                    <i class="flaticon-star"></i>
-                                    <i class="flaticon-star"></i>
-                                </div>
+                            <div class="review-content">
+                                <i class="flaticon-left-quote"></i>
+                                <p>{{$partener->review}}</p>
                             </div>
                         </div>
-
-                        <div class="review-content">
-                            <i class="flaticon-left-quote"></i>
-                            <p>First Egyptian helps me a lot to get my first job & achieve my goal also pushes me to establish myself, I'm really grateful to First Egyptian.</p>
-                        </div>
-                    </div>
-
-                    <div class="review-single-card">
-                        <div class="review-info">
-                            <div class="image">
-                                <img src="{{asset("assets/$dir/images/review/review-1.jpg")}}" alt="image">
-                            </div>
-
-                            <div class="content">
-                                <h3>Camelia Renesa</h3>
-                                <span>IT Specialist</span>
-
-                                <div class="rating">
-                                    <i class="flaticon-star"></i>
-                                    <i class="flaticon-star"></i>
-                                    <i class="flaticon-star"></i>
-                                    <i class="flaticon-star"></i>
-                                    <i class="flaticon-star"></i>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="review-content">
-                            <i class="flaticon-left-quote"></i>
-                            <p>First Egyptian helps me a lot to get my first job & achieve my goal also pushes me to establish myself, I'm really grateful to First Egyptian.</p>
-                        </div>
-                    </div>
-
-                    <div class="review-single-card">
-                        <div class="review-info">
-                            <div class="image">
-                                <img src="{{asset("assets/$dir/images/review/review-2.jpg")}}" alt="image">
-                            </div>
-
-                            <div class="content">
-                                <h3>Jennifer Rose</h3>
-                                <span>Digital Marketer</span>
-
-                                <div class="rating">
-                                    <i class="flaticon-star"></i>
-                                    <i class="flaticon-star"></i>
-                                    <i class="flaticon-star"></i>
-                                    <i class="flaticon-star"></i>
-                                    <i class="flaticon-star"></i>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="review-content">
-                            <i class="flaticon-left-quote"></i>
-                            <p>First Egyptian helps me a lot to get my first job & achieve my goal also pushes me to establish myself, I'm really grateful to First Egyptian.</p>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>
