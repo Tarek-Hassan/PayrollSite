@@ -13,6 +13,8 @@ use Illuminate\Database\Eloquent\Builder;
 use App\Filament\Resources\SettingResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Filament\Resources\SettingResource\RelationManagers;
+use Filament\Forms\Components\Wizard;
+
 
 class SettingResource extends Resource
 {
@@ -25,39 +27,50 @@ class SettingResource extends Resource
     {
         return $form
             ->schema([
-                Card::make()
-                ->schema([
-                Forms\Components\TextInput::make('email')
-                    ->email()
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('phone')
-                    ->tel()
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\Textarea::make('about_ar')
-                    ->required(),
-                Forms\Components\Textarea::make('about_en')
-                    ->required(),
+                Card::make()->schema([
+                    Wizard::make([
+                    Wizard\Step::make('About')->schema([
+                        Forms\Components\Textarea::make('about_en')
+                            ->required(),
+                        Forms\Components\Textarea::make('about_ar')
+                            ->required(),
+                    ]),
+                Wizard\Step::make('contact')
+                    ->schema([
+                        Forms\Components\TextInput::make('email')
+                            ->email()
+                            ->required()
+                            ->maxLength(255),
+                        Forms\Components\TextInput::make('phone')
+                            ->tel()
+                            ->required()
+                            ->maxLength(255),
+                            Forms\Components\TextInput::make('address_en')
+                                    ->maxLength(255),
+                        Forms\Components\TextInput::make('address_ar')
+                                ->maxLength(255),
+                        Forms\Components\TextInput::make('fax')
+                                ->maxLength(255),
+                        Forms\Components\Textarea::make('map')
+                                ->maxLength(65535),
+                    ]),
+                    Wizard\Step::make('social')
+                    ->schema([
+                        Forms\Components\TextInput::make('twitter')
+                            ->maxLength(255),
+                        Forms\Components\TextInput::make('facebook')
+                            ->maxLength(255),
+                        Forms\Components\TextInput::make('linkedin')
+                            ->maxLength(255),
+                        Forms\Components\TextInput::make('instagram')
+                            ->maxLength(255),
+                        Forms\Components\TextInput::make('youtube')
+                            ->maxLength(255),
+                    ]),
 
-                Forms\Components\TextInput::make('address_ar')
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('address_en')
-                    ->maxLength(255),
-                    Forms\Components\TextInput::make('fax')
-                    ->maxLength(255),
-                Forms\Components\Textarea::make('map')
-                    ->maxLength(65535),
-                Forms\Components\TextInput::make('twitter')
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('facebook')
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('linkedin')
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('instagram')
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('youtube')
-                    ->maxLength(255),
+
+
+                ]),
                     ])
             ]);
     }
