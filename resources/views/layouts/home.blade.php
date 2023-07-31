@@ -104,11 +104,11 @@
                     <div class="col-lg-7 col-md-6">
                         <ul class="topbar-action">
                             <li>
-                                <a href="profile-authentication.html"><i class="flaticon-padlock"></i> {{ trans('home.login') }}</a>
+                                <a href="#"><i class="flaticon-padlock"></i> {{ trans('home.login') }}</a>
                             </li>
 
                             <li>
-                                <a href="profile-authentication.html"><i class="flaticon-user"></i> {{ trans('home.register') }}</a>
+                                <a href="#"><i class="flaticon-user"></i> {{ trans('home.register') }}</a>
                             </li>
 
                             <li class="dropdown language-option">
