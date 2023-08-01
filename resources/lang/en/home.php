@@ -23,7 +23,7 @@ return [
     'hR_partner' => 'HR Partner',
     'your_business' => 'For Your Business',
     'download_brochure' => 'Download Our Brochure',
-    'trustworthy_hR_partner'=>'Is Your Trustworthy HR Partner',
+    // 'trustworthy_hR_partner'=>'Is Your Trustworthy HR Partner',
 
     'y_of_exper' => 'YEARS OF EXPERIENCE',
     'expert_service' => 'EXPERT AT YOUR SERVICE',

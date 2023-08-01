@@ -276,7 +276,7 @@
 
                     <div class="col-lg-6 col-md-12">
                         <div class="about-content" data-aos="fade-{{$direction}}" data-aos-delay="70" data-aos-duration="700">
-                            <h3 style="color:#b42025;">{{ trans('home.company_first') }}</h3></b><h3> {{ trans('home.trustworthy_hR_partner') }}</h3>
+                            <h3 style="color:#b42025;">{{ trans('home.company_first') }}</h3></b><h3> Is Your Trustworthy HR Partner</h3>
                             <p>
                                 Founded in 1986, First Egyptian Engineering (FEE) has been serving the energy, process, telecom, airline and other industries in Egypt and the Middle East. </p>
                             <p>
@@ -305,7 +305,7 @@
                             </div>
 
                            <div class="about-btn">
-                                <a href="about-us.html" class="default-btn">{{ trans('home.learn_about_us') }}<i class="flaticon-plus"></i></a>
+                                <a href="{{ route('about') }}" class="default-btn">{{ trans('home.learn_about_us') }}<i class="flaticon-plus"></i></a>
                             </div>
                         </div>
                     </div>

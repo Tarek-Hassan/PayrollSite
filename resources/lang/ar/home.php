@@ -22,7 +22,7 @@ return [
     'hR_partner' => 'الموارد البشرية',
     'your_business' => 'الأمثل',
     'download_brochure' => 'تحميل الكتيب الدعائي',
-    'trustworthy_hR_partner'=>'شريكك الخبير بالموارد البشرية',    
+    // 'trustworthy_hR_partner'=>'شريكك الخبير بالموارد البشرية',    
     'y_of_exper' => 'مسيرة النجاح',
     'expert_service' => 'خبير و متخصص بخدمتك',
     'learn_about_us'=>'للمزيد عنا',
