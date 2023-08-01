@@ -43,6 +43,7 @@
                     background-image: url({{asset("assets/$dir/images/review/review-bg.jpg")}});
                 }
                 @font-face {
+                    
                     font-family: "flaticon";
                     src: url('{{asset("assets/$dir/fonts/flaticon.ttf?10e8e1e7d1f5cd341e0d900fd834d828")}}') format("truetype"),
                     url('{{asset("assets/$dir/fonts/flaticon.woff?10e8e1e7d1f5cd341e0d900fd834d828")}}') format("woff"),

@@ -42,7 +42,7 @@ class ServiceResource extends Resource
             ->schema([
                 Card::make()->schema([
 
-                    TextInput::make('title')->placeholder('title')
+                    TextInput::make('title_en')->placeholder('title_en')
                         ->autofocus()->required()
                         ->minLength(3)
                         ->reactive()
@@ -50,6 +50,11 @@ class ServiceResource extends Resource
                         ->afterStateUpdated(function (Closure $set, $state) {
                             $set('slug', Str::slug($state));
                         }),
+                    TextInput::make('title_ar')->placeholder('title_ar')
+                        ->autofocus()->required()
+                        ->minLength(3)
+                        ->unique(ignoreRecord: true)
+                        ,
                     TextInput::make('slug'),
                     SpatieMediaLibraryFileUpload::make('thumbnail')->collection('services'),
                     // RichEditor::make('description')->required(),
@@ -64,8 +69,9 @@ class ServiceResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('title')->sortable()->searchable(),
-                TextColumn::make('slug'),
+                TextColumn::make('title_ar')->sortable()->searchable(),
+                TextColumn::make('title_en')->sortable()->searchable(),
+                // TextColumn::make('slug'),
                 IconColumn::make('is_published')
                             ->boolean()
                             ->trueIcon('heroicon-o-badge-check')

@@ -16,10 +16,10 @@ class CreateServicesTable extends Migration
     {
         Schema::create('services', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
+            $table->string('title_ar');
+            $table->string('title_en');
             $table->string('slug')->unique();
             $table->boolean('is_published')->default(0);
-            $table->text('description')->nullable();
             $table->timestamps();
         });
     }

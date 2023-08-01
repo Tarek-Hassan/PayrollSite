@@ -31,15 +31,24 @@ class PartenerReviewResource extends Resource
             ->schema([
                 Card::make()
                 ->schema([
-                Forms\Components\TextInput::make('name')
+                Forms\Components\TextInput::make('name_en')
+                        ->required()
+                        ->maxLength(255),
+                Forms\Components\TextInput::make('name_ar')
                     ->required()
                     ->maxLength(255),
-                Forms\Components\TextInput::make('postion')
+                Forms\Components\TextInput::make('postion_en')
                     ->required()
                     ->maxLength(255),
-                Forms\Components\Textarea::make('review')
+                Forms\Components\TextInput::make('postion_ar')
                     ->required()
                     ->maxLength(255),
+                Forms\Components\Textarea::make('review_en')
+                    ->required()
+                    ->maxLength(142),
+                Forms\Components\Textarea::make('review_ar')
+                    ->required()
+                    ->maxLength(142),
                 Forms\Components\TextInput::make('rate')
                     ->numeric()
                     ->required(),
@@ -56,8 +65,8 @@ class PartenerReviewResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('id'),
-                Tables\Columns\TextColumn::make('name')->sortable()->searchable(),
-                Tables\Columns\TextColumn::make('postion')->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('name_en')->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('postion_en')->sortable()->searchable(),
                 Tables\Columns\TextColumn::make('rate')->sortable(),
                 Tables\Columns\IconColumn::make('is_published')
                     ->boolean()
