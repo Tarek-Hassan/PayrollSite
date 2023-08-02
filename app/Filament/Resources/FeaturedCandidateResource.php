@@ -30,7 +30,7 @@ class FeaturedCandidateResource extends Resource
 {
     protected static ?string $model = FeaturedCandidate::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-collection';
+    protected static ?string $navigationIcon = 'heroicon-o-clipboard-list';
     protected static ?int $navigationSort = 2;
 
     public static function form(Form $form): Form
