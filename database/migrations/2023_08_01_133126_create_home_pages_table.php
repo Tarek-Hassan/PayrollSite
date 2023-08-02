@@ -37,9 +37,19 @@ class CreateHomePagesTable extends Migration
             $table->text('how_works_Body_en');
             $table->text('how_works_footer_ar');
             $table->text('how_works_footer_en');
-            //Employeer
-
-
+            //Employeer featured-candidates
+            $table->string('featured_candidates_title_ar');
+            $table->string('featured_candidates_title_en');
+            $table->text('featured_candidates_content_ar');
+            $table->text('featured_candidates_content_en');
+            //Job Applicants
+            $table->string('job_applicants_title_ar');
+            $table->string('job_applicants_title_en');
+            $table->text('job_applicants_content_ar');
+            $table->text('job_applicants_content_en');
+            //partner-content
+            $table->text('partner_content_ar');
+            $table->text('partner_content_en');
             $table->timestamps();
         });
     }

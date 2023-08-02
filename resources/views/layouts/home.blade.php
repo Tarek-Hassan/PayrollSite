@@ -694,7 +694,7 @@
                         <div class="partner-content">
                             <h3>{{ trans('home.partner_content_h3') }}</h3>
                             <p>
-                                {{ trans('home.partner_content_p') }}
+                                We believe that our clients are our partners of success, We believe that in order to provide them with a flawless service offering, they have to be the focus of our every initiative and operation. We start with recognizing thier needs and from there stem our proposed solutions and services.
                             </p>
                             <div class="layer-shape">
                                 <img src="{{asset("assets/$dir/images/partner/layer.png")}}" alt="image">

@@ -43,7 +43,7 @@ return [
     'apply_jobs' => 'Apply Jobs',
     'step_3' => 'Step 3',
     'partner_content_h3'=>'Our Top Trusted Partners Who Have Trust Our Concepts',
-    'partner_content_p'=>'We believe that our clients are our partners of success, We believe that in order to provide them with a flawless service offering, they have to be the focus of our every initiative and operation. We start with recognizing thier needs and from there stem our proposed solutions and services.',
+    // 'partner_content_p'=>'We believe that our clients are our partners of success, We believe that in order to provide them with a flawless service offering, they have to be the focus of our every initiative and operation. We start with recognizing thier needs and from there stem our proposed solutions and services.',
     'partner_review'=>'Partners Review',
 
     'subscribe_h3'=>'Subscribe For Newsletter',
