@@ -20,4 +20,8 @@ Route::get('/',HomeController::class);
 Route::post('subscribe',SubscribeController::class)->name('subscribe.store');
 Route::get('/lang/{lang}', LangController::class)->name('change-lang');
 
-Route::post('about',AboutController::class)->name('about');
+Route::get('about',AboutController::class)->name('about');
+
+Route::get('coming_soon',function(){
+    return view('layouts.coming_soon');
+})->name('coming_soon');

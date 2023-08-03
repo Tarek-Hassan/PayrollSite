@@ -58,7 +58,11 @@ return [
     'phone_icon'=>'هـ',
     'fax_icon'=>'ف',
     'email_icon'=>'ب',
+    
+    'coming_soon'=>'نقدر شغفكم للإطلاع علي خدماتنا لذلك نعتذر لكم و سنوافيكم خلال',
+    
+    'content'=>'المحتوي',
 
 ];
-// {{ trans('home.address_icon') }}
+// {{ trans('home.content') }}
 // {{($dir == 'rtl')?'ltr':''}}

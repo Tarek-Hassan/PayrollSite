@@ -2,18 +2,20 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\HomePageResource\Pages;
-use App\Filament\Resources\HomePageResource\RelationManagers;
-use App\Models\HomePage;
 use Filament\Forms;
-use Filament\Resources\Form;
-use Filament\Resources\Resource;
-use Filament\Resources\Table;
 use Filament\Tables;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
-use Filament\Forms\Components\Wizard;
+use App\Models\HomePage;
+use Filament\Resources\Form;
+use Filament\Resources\Table;
+use Filament\Resources\Resource;
 use Filament\Forms\Components\Card;
+use Filament\Forms\Components\Wizard;
+use Illuminate\Database\Eloquent\Builder;
+use App\Filament\Resources\HomePageResource\Pages;
+use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
+use App\Filament\Resources\HomePageResource\RelationManagers;
+use Filament\Forms\Components\Tabs;
 
 class HomePageResource extends Resource
 {
@@ -27,9 +29,10 @@ class HomePageResource extends Resource
         return $form
             ->schema([
                 Card::make()->schema([
-                    Wizard::make([
-
-                        Wizard\Step::make('Main Banner')->schema([
+                    // Wizard::make([
+                    Tabs::make('Heading')->tabs([
+                        //Wizard\Stepmake('Main Banner')->schema([
+                        Tabs\Tab::make('Main Banner')->schema([
                             Forms\Components\Textarea::make('main_banner_content_ar')
                                 ->required()
                                 ->maxLength(65535),
@@ -39,7 +42,7 @@ class HomePageResource extends Resource
                             Forms\Components\TextInput::make('main_banner_link')
                                 ->maxLength(255),
                         ]),
-                        Wizard\Step::make('About')->schema([
+                        Tabs\Tab::make('About')->schema([
                             Forms\Components\TextInput::make('about_title_ar')
                                 ->required()
                                 
@@ -64,12 +67,12 @@ class HomePageResource extends Resource
                             Forms\Components\TextInput::make('expert_at_service')
                                 ->required(),
                         ]),
-                        Wizard\Step::make('Why First')->schema([
+                        Tabs\Tab::make('Why First')->schema([
                             
                             Forms\Components\TextInput::make('why_first_link')
                                 ->maxLength(255),
                         ]),
-                        Wizard\Step::make('How it works')->schema([
+                        Tabs\Tab::make('How it works')->schema([
                             Forms\Components\Textarea::make('how_works_header_ar')
                                 ->required()
                                 ->maxLength(65535),
@@ -89,7 +92,7 @@ class HomePageResource extends Resource
                                 ->required()
                                 ->maxLength(65535),
                         ]),
-                        Wizard\Step::make('Employeer')->schema([
+                        Tabs\Tab::make('Employeer')->schema([
                             
                             Forms\Components\TextInput::make('featured_candidates_title_ar')
                                 ->required()
@@ -105,7 +108,7 @@ class HomePageResource extends Resource
                                 ->maxLength(65535),
                             
                         ]),
-                        Wizard\Step::make('Job Applicants')->schema([
+                        Tabs\Tab::make('Job Applicants')->schema([
                             Forms\Components\TextInput::make('job_applicants_title_ar')
                                 ->required()
                                 ->maxLength(255),
@@ -119,13 +122,18 @@ class HomePageResource extends Resource
                                 ->required()
                                 ->maxLength(65535),
                         ]),
-                        Wizard\Step::make('Partner')->schema([
+                        Tabs\Tab::make('Partner')->schema([
                             Forms\Components\Textarea::make('partner_content_ar')
                                 ->required()
                                 ->maxLength(65535),
                             Forms\Components\Textarea::make('partner_content_en')
                                 ->required()
                                 ->maxLength(65535),
+                            SpatieMediaLibraryFileUpload::make('thumbnail')->collection('Partner')
+                            ->multiple()
+                            ->enableReordering()
+                            ->hint('only the first 6 image will display')
+                            ,
                         ]),
 
                     ]),

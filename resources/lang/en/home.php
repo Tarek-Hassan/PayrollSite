@@ -60,5 +60,9 @@ return [
         'phone_icon'=>'P',
         'fax_icon'=>'X',
         'email_icon'=>'E',
+        //comingSoonMsg
+        'coming_soon'=>'We Are Launching Soon',
+        
+        'content'=>'Content',
 ];
-// {{ trans('home.company_name') }}
+// {{ trans('home.coming_soon') }}

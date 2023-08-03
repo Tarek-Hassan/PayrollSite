@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\Setting;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\ServiceProvider;
@@ -25,7 +26,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        view()->composer('layouts.home', function ($view) {
+        view()->composer('*', function ($view) {
             if (Session::has('locale')) {
                 App::setLocale(Session::get('locale'));
             }
@@ -33,8 +34,9 @@ class AppServiceProvider extends ServiceProvider
             $dir = App::isLocale('ar') ? 'rtl' : 'ltr';
             $direction = App::isLocale('ar') ? 'right' : 'left';
             $reverse_direction = App::isLocale('ar') ?  'left':'right';
+            $settings = Setting::first();
             
-            $view->with(compact('dir', 'lang','direction','reverse_direction'));
+            $view->with(compact('settings','dir', 'lang','direction','reverse_direction'));
         });
     }
 }

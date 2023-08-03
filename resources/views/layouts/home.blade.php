@@ -1,235 +1,6 @@
-<!doctype html>
+@extends('layouts.app')
+@section('content')
 
-<html lang="{{$lang}}" dir="{{$dir}}">
-
-    <head>
-        <!-- Required meta tags -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="description" content="Author: first-egyptian, first egyptian , Business: hr , services: outsourcing , services: recruitment , services: payroll , services: payroll Calculation, services: job, Category: hr, employeers, job seekers">
-
-        <!-- Links of CSS files -->
-        <link rel="stylesheet" href="{{asset("assets/$dir/css/bootstrap.min.css")}}">
-        <link rel="stylesheet" href="{{asset("assets/$dir/css/aos.css")}}">
-        <link rel="stylesheet" href="{{asset("assets/$dir/css/animate.min.css")}}">
-        <link rel="stylesheet" href="{{asset("assets/$dir/css/meanmenu.css")}}">
-        <link rel="stylesheet" href="{{asset("assets/$dir/css/flaticon.css")}}">
-        <link rel="stylesheet" href="{{asset("assets/$dir/css/remixicon.css")}}">
-        <link rel="stylesheet" href="{{asset("assets/$dir/css/odometer.min.css")}}">
-        <link rel="stylesheet" href="{{asset("assets/$dir/css/owl.carousel.min.css")}}">
-        <link rel="stylesheet" href="{{asset("assets/$dir/css/owl.theme.default.min.css")}}">
-        <link rel="stylesheet" href="{{asset("assets/$dir/css/magnific-popup.min.css")}}">
-        <link rel="stylesheet" href="{{asset("assets/$dir/css/fancybox.min.css")}}">
-        <link rel="stylesheet" href="{{asset("assets/$dir/css/selectize.min.css")}}">
-        <link rel="stylesheet" href="{{asset("assets/$dir/css/metismenu.min.css")}}">
-        <link rel="stylesheet" href="{{asset("assets/$dir/css/simplebar.min.css")}}">
-        <link rel="stylesheet" href="{{asset("assets/$dir/css/dropzone.min.css")}}">
-        <link rel="stylesheet" href="{{asset("assets/$dir/css/style.css")}}">
-        <link rel="stylesheet" href="{{asset("assets/$dir/css/navbar.css")}}">
-        <link rel="stylesheet" href="{{asset("assets/$dir/css/footer.css")}}">
-        <link rel="stylesheet" href="{{asset("assets/$dir/css/dashboard.css")}}">
-        <link rel="stylesheet" href="{{asset("assets/$dir/css/dark.css")}}">
-		<link rel="stylesheet" href="{{asset("assets/$dir/css/responsive.css")}}">
-        
-        @if($dir == 'rtl')
-            <link rel="stylesheet" href="{{asset("assets/$dir/css/rtl.css")}}">
-        @endif
-		
-		<title>{{ trans('home.company') }}</title>
-
-        <link rel="icon" type="image/png" href="{{asset("assets/$dir/images/fav.png")}}">
-        <style>
-                .review-area {
-                    background-image: url({{asset("assets/$dir/images/review/review-bg.jpg")}});
-                }
-                @font-face {
-                    
-                    font-family: "flaticon";
-                    src: url('{{asset("assets/$dir/fonts/flaticon.ttf?10e8e1e7d1f5cd341e0d900fd834d828")}}') format("truetype"),
-                    url('{{asset("assets/$dir/fonts/flaticon.woff?10e8e1e7d1f5cd341e0d900fd834d828")}}') format("woff"),
-                    url('{{asset("assets/$dir/fonts/flaticon.woff2?10e8e1e7d1f5cd341e0d900fd834d828")}}') format("woff2"),
-                    url('{{asset("assets/$dir/fonts/flaticon.eot?10e8e1e7d1f5cd341e0d900fd834d828#iefix")}}') format("embedded-opentype"),
-                    url('{{asset("assets/$dir/fonts/flaticon.svg?10e8e1e7d1f5cd341e0d900fd834d828#flaticon")}}') format("svg");
-                    }
-                @font-face {
-                    font-family: "remixicon";
-                    src: url('{{asset("assets/$dir/fonts/remixicon.eot?t=1590207869815")}}'); /* IE9*/
-                    src: url('{{asset("assets/$dir/fonts/remixicon.eot?t=1590207869815#iefix")}}') format('embedded-opentype'), /* IE6-IE8 */
-                    url('{{asset("assets/$dir/fonts/remixicon.woff2?t=1590207869815")}}') format("woff2"),
-                    url('{{asset("assets/$dir/fonts/remixicon.woff?t=1590207869815")}}') format("woff"),
-                    url('{{asset("assets/$dir/fonts/remixicon.ttf?t=1590207869815")}}') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
-                    url('{{asset("assets/$dir/fonts/remixicon.svg?t=1590207869815#remixicon")}}') format('svg'); /* iOS 4.1- */
-                    font-display: swap;
-                    }
-                .review-info .image{
-                    width: 100px;
-                    height: 100px;
-                }
-        </style>
-    </head>
-
-    <body>
-        <!-- Start Preloader Area -->
-        <!-- <div class="preloader-area">
-            <div class="spinner">
-                <div class="inner">
-                    <div class="disc"></div>
-                    <div class="disc"></div>
-                    <div class="disc"></div>
-                </div>
-            </div>
-        </div> -->
-        <!-- End Preloader Area -->
-
-        <!-- Start Topbar Area -->
-        <div class="topbar-area">
-            <div class="container-fluid">
-                <div class="row align-items-center">
-                    <div class="col-lg-5 col-md-6">
-                        <ul class="topbar-social-list">
-                            <li>
-                                <a href="{{$settings->facebook}}" target="_blank"><i class="flaticon-facebook"></i></a>
-                            </li>
-                            <li>
-                                <a href="{{$settings->twitter}}" target="_blank"><i class="flaticon-twitter"></i></a>
-                            </li>
-                            <li>
-                                <a href="{{$settings->instagram}}" target="_blank"><i class="flaticon-instagram"></i></a>
-                            </li>
-                            <li>
-                                <a href="{{$settings->linkedin}}" target="_blank"><i class="flaticon-linkedin"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="col-lg-7 col-md-6">
-                        <ul class="topbar-action">
-                            <li>
-                                <a href="#"><i class="flaticon-padlock"></i> {{ trans('home.login') }}</a>
-                            </li>
-
-                            <li>
-                                <a href="#"><i class="flaticon-user"></i> {{ trans('home.register') }}</a>
-                            </li>
-
-                            <li class="dropdown language-option">
-                                <button class="dropdown-toggle" type="button" id="language1" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <i class="flaticon-worldwide"></i>
-                                    <span class="lang-namee">{{($dir == 'rtl')?'العربيّة':'English'}}</span>
-                                </button>
-                                <div class="dropdown-menu language-dropdown-menu" aria-labelledby="language1">
-                                    <a class="dropdown-item" href="{{ route('change-lang',['lang'=>'en']) }}">
-                                        <img src="{{asset("assets/$dir/images/uk.png")}}" alt="flag">
-                                        English
-                                    </a>
-                                    <a class="dropdown-item" href="{{ route('change-lang',['lang'=>'ar']) }}">
-                                        <img src="{{asset("assets/$dir/images/egypt.png")}}" alt="flag">
-                                        العربيّة
-                                    </a>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- End Topbar Area -->
-
-        <!-- Start Navbar Area -->
-        <div class="navbar-area">
-            <div class="main-responsive-nav">
-                <div class="container">
-                    <div class="main-responsive-menu">
-                        <div class="logo">
-                            <a href="index.html">
-                                <img src="{{asset("assets/$dir/images/logo.png")}}" class="black-logo" alt="image">
-                                <img src="{{asset("assets/$dir/images/logo-2.png")}}" class="white-logo" alt="image">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="main-navbar">
-                <div class="container-fluid">
-                    <nav class="navbar navbar-expand-md navbar-light">
-                        <a class="navbar-brand" href="index.html">
-                            <img src="{{asset("assets/$dir/images/logo.png")}}" class="black-logo" alt="image">
-                            <img src="{{asset("assets/$dir/images/logo-2.png")}}" class="white-logo" alt="image">
-                        </a>
-
-                        <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
-                            <ul class="navbar-nav m-auto">
-                                <li class="nav-item">
-                                    <!-- <a href="#" class="nav-link active">
-                                        Home 
-                                    </a> -->
-                                <li class="nav-item">
-                                    <a href="#about" class="nav-link">
-                                        {{ trans('home.about') }}
-                                    </a>
-                                </li>
-
-                                <li class="nav-item">
-                                    <a href="#why" class="nav-link">
-                                        {{ trans('home.why') }}
-                                    </a>
-                                </li>
-
-                                <li class="nav-item">
-                                    <a href="#how" class="nav-link">
-                                        {{ trans('home.how') }}
-                                    </a>
-                                    <ul class="dropdown-menu">
-                                        <li class="nav-item">
-                                            <a href="#employeers" class="nav-link">{{ trans('home.employeers') }}</a>
-                                        </li>
-
-                                        <li class="nav-item">
-                                            <a href="#applicants" class="nav-link">{{ trans('home.applicants') }}</a>
-                                        </li>
-                                    </ul>
-                                </li>
-
-                                <li class="nav-item">
-                                    <a href="#services" class="nav-link">
-                                        {{ trans('home.services') }}
-                                    </a>
-                                </li>
-
-                                <li class="nav-item">
-                                    <a href="#partners" class="nav-link">
-                                        {{ trans('home.partners') }}
-                                    </a>
-                                </li>
-
-                                <li class="nav-item">
-                                    <a href="#reviews" class="nav-link">
-                                        {{ trans('home.reviews') }}
-                                    </a>
-                                </li>
-                                
-                                <li class="nav-item">
-                                    <a href="#subscribe" class="nav-link">{{ trans('home.subscribe') }}</a>
-                                </li>
-
-                                <li class="nav-item">
-                                    <a href="#contact" class="nav-link">{{ trans('home.contact') }}</a>
-                                </li>
-                            </ul>
-
-                            <!-- <div class="others-options d-flex align-items-center">
-                                <div class="option-item">
-                                    <a href="dashboard-post-job.html" class="default-btn">Post A Job <i class="flaticon-plus"></i></a>
-                                </div>
-                            </div> -->
-                        </div>
-                    </nav>
-                </div>
-            </div>
-        </div>
-        <!-- End Navbar Area -->
-        
         <!-- Start Main Banner Area -->
         <div class="main-banner-area">
             <div class="container">
@@ -248,10 +19,10 @@
                             <h1>{{ trans('home.the_perfect') }} </h1> <h1 style="color: #b42025;">{{ trans('home.hR_partner') }}</h1> <h1>  {{ trans('home.your_business') }}</h1>
                             @endif
                             <p>
-                                Our mission since foundation and throughout our years of operation is: “providing high end quality services at competitive prices.”
+                               {{$home->main_banner_content}}
                             </p>    
                             <div class="banner-btn">
-                                <a href="#" class="default-btn">{{ trans('home.download_brochure') }}<i class="flaticon-list-1"></i></a>
+                                <a href="{{$home->main_banner_link}}" class="default-btn">{{ trans('home.download_brochure') }}<i class="flaticon-list-1"></i></a>
                             </div>
 
                             <div class="layer-shape" data-aos="fade-down" data-aos-delay="80" data-aos-duration="800">
@@ -276,17 +47,16 @@
 
                     <div class="col-lg-6 col-md-12">
                         <div class="about-content" data-aos="fade-{{$direction}}" data-aos-delay="70" data-aos-duration="700">
-                            <h3 style="color:#b42025;">{{ trans('home.company_first') }}</h3></b><h3> Is Your Trustworthy HR Partner</h3>
+                            <h3 style="color:#b42025;">{{ trans('home.company_first') }}</h3></b><h3> {{$home->about_title}}</h3>
+                            <p> {{$home->about_header}} </p>
                             <p>
-                                Founded in 1986, First Egyptian Engineering (FEE) has been serving the energy, process, telecom, airline and other industries in Egypt and the Middle East. </p>
-                            <p>
-                                We provide a wide range of HR services including recruitment and outsourcing, These include national as well as expat personnel working for our international clients
+                                {{$home->about_footer}}
                             </p>
                             <div class="row">
                                 <div class="col-lg-6 col-sm-6 col-md-6 col-6">
                                     <div class="about-fun-fact">
                                         <h3>
-                                            <span class="odometer" data-count="35" dir={{($dir == 'rtl')?'ltr':''}}>00</span>
+                                            <span class="odometer" data-count="{{$home->years_exper}}" dir={{($dir == 'rtl')?'ltr':''}}>00</span>
                                             <span class="sign-icon">+</span>
                                         </h3>
                                         <p>{{ trans('home.y_of_exper') }}</p>
@@ -296,7 +66,7 @@
                                 <div class="col-lg-6 col-sm-6 col-md-6 col-6">
                                     <div class="about-fun-fact">
                                         <h3>
-                                            <span class="odometer" data-count="100"  dir={{($dir == 'rtl')?'ltr':''}} >00</span>
+                                            <span class="odometer" data-count="{{$home->expert_at_service}}"  dir={{($dir == 'rtl')?'ltr':''}} >00</span>
                                             <span class="sign-icon">+</span>
                                         </h3>
                                         <p>{{ trans('home.expert_service') }}</p>
@@ -327,7 +97,7 @@
                     <div class="col-lg-5 col-md-12">
                         <div class="play-video-content">
                             <div class="play-btn">
-                                <a href="https://www.youtube.com/watch?v=ODfy2YIKS1M" class="video-btn popup-youtube">
+                                <a href="{{$home->why_first_link}}" class="video-btn popup-youtube">
                                     <i class="flaticon-play-button-arrowhead"></i>
                                 </a>
                             </div>
@@ -349,9 +119,9 @@
             <div class="container">
                 <div class="section-title">
                     <h2>{{trans('home.how_works_area') }} <span style="color:#b42025;">{{ trans('home.company') }}</span> {{ trans('home.works') }}</h2>
-                    <p>We provide our services to serve both parties of the HR Community </p>
-                    <p>Employeers who are seeking outsourcing HR services, recruitment and outsource hiring </p> 
-                    <p>Job Seekers who try to connect with employeers that need thier experties and talent</p>
+                    <p>{{$home->how_works_header}}</p>
+                    <p>{{$home->how_works_Body}} </p> 
+                    <p>{{$home->how_works_footer}}</p>
                 </div>
             </div>
             <!-- End title Area -->
@@ -405,106 +175,50 @@
                         <div class="featured-candidates-item">
                             <div class="featured-candidates-content">
                                 <h3>{{ trans('home.employeers') }}</h3>   
-                                <h4>Find Talent From The Featured Ones For Your Job</h4>
+                                <h4>{{$home->featured_candidates_title}}</h4>
                                 <p>
-                                    It is imperative for any organization to perfect its payroll and personnel operations which are often complex and potentially risky,
-                                    Outsourcing enables the organization to minimize its risk, time, money and ensure data security and expert handling of these functions.
+                                    {{$home->featured_candidates_content}}
                                 </p>
 
                                 <!-- <div class="layer-shape" data-aos="fade-down" data-aos-delay="50" data-aos-duration="500">
                                     <img src="{{asset("assets/$dir/images/featured-candidates/layer.png")}}" alt="image">
                                 </div> -->
                             </div>
-    
-                            <div class="featured-candidates-box">
-                                <div class="row align-items-center">
-                                    <div class="col-lg-12 col-sm-12">
-                                        <div class="candidates-box-content">
-                                            <div class="image">
-                                                <a href="candidates-details-1.html"><img src="{{asset("assets/$dir/images/featured-candidates/recruitment.jpeg")}}" alt="image"></a>
-                                            </div>
 
-                                            <div class="content">
-                                                <h3>
-                                                    <a href="candidates-details-1.html">Recruitment Services</a>
-                                                </h3>
-                                                <span>Fetch talants from our Database, schedule interviews , Hiring Process and follow up</span>
 
-                                                <div class="rating">
-                                                    <!-- <i class="flaticon-star"></i>
-                                                    <i class="flaticon-star"></i>
-                                                    <i class="flaticon-star"></i>
-                                                    <i class="flaticon-star"></i>
-                                                    <i class="flaticon-star"></i>
-                                                    <span>5 star service</span> -->
+                            @foreach($featuredCandidates as $featuredCandidate)
+                                <div class="featured-candidates-box">
+                                    <div class="row align-items-center">
+                                        <div class="col-lg-12 col-sm-12">
+                                            <div class="candidates-box-content">
+                                                <div class="image">
+                                                    <a href="#"><img src="{{$featuredCandidate->getFirstMediaUrl('featured_candidate')}}" alt="image"></a>
                                                 </div>
 
-                                                <ul class="job-info">
-                                                    <li><i class="ri-grid-line"></i>All Majors</li>
-                                                    <li><i class="ri-map-pin-range-line"></i>Large scale of choices</li>
-                                                </ul>
+                                                <div class="content">
+                                                    <h3>
+                                                        <a href="#">{{$featuredCandidate->title}}</a>
+                                                    </h3>
+                                                    <span>{{$featuredCandidate->content}}</span>
+
+                                                    <div class="rating">
+                                                    </div>
+
+                                                    <ul class="job-info">
+                                                        <li><i class="{{$featuredCandidate->tag1_icon}}"></i>{{$featuredCandidate->tag1}}</li>
+                                                        <li><i class="{{$featuredCandidate->tag2_icon}}"></i>{{$featuredCandidate->tag2}}</li>
+                                                    </ul>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            @endforeach
 
-                            <div class="featured-candidates-box">
-                                <div class="row align-items-center">
-                                    <div class="col-lg-12 col-sm-12">
-                                        <div class="candidates-box-content">
-                                            <div class="image">
-                                                <a href="candidates-details-1.html"><img src="{{asset("assets/$dir/images/featured-candidates/payroll.jpeg")}}" alt="image"></a>
-                                            </div>
 
-                                            <div class="content">
-                                                <h3>
-                                                    <a href="candidates-details-1.html">Payroll Operations</a>
-                                                </h3>
-                                                <span>Calculation, Salary Slips, Tax handling , Social & private Insurance, Personnel Ops., Reports ..etc.</span>
-
-                                                <div class="rating">
-                                                </div>
-
-                                                <ul class="job-info">
-                                                    <li><i class="ri-calculator-line"></i>Payroll Calculations</li>
-                                                    <li><i class="ri-pie-chart-line"></i>Reports & Consulidations</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="featured-candidates-box">
-                                <div class="row align-items-center">
-                                    <div class="col-lg-12 col-sm-12">
-                                        <div class="candidates-box-content">
-                                            <div class="image">
-                                                <a href="candidates-details-1.html"><img src="{{asset("assets/$dir/images/featured-candidates/outsourcing.jpeg")}}" alt="image"></a>
-                                            </div>
-
-                                            <div class="content">
-                                                <h3>
-                                                    <a href="candidates-details-1.html">Outsourcing Services</a>
-                                                </h3>
-                                                <span>Local assets, Expat, Affording Salary slips, Mobile app, Tax, Social & private Insurance, Follow up ..etc.</span>
-
-                                                <div class="rating">
-                                                </div>
-
-                                                <ul class="job-info">
-                                                    <li><i class="ri-shield-user-line"></i>No Hiring Risk</li>
-                                                    <li><i class="ri-wallet-3-line"></i>Save Money</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
 
                             <div class="featured-candidates-btn">
-                                <a href="candidates-2.html">{{ trans('home.view_all_Services') }}<i class="flaticon-right-arrow"></i></a>
+                                <a href="#">{{ trans('home.view_all_Services') }}<i class="flaticon-right-arrow"></i></a>
                             </div>
                         </div>
                     </div>
@@ -522,8 +236,8 @@
                         <div class="col-lg-6 col-md-12">
                             <div class="overview-content {{($dir == 'rtl')?'pt-100':''}}">
                                 <h3>{{ trans('home.job_applicants') }}</h3>
-                                <h4>Build Your Professional Resume With The Help Of Expert</h4>
-                                <p>First Egyptian experts will support you to build your C.V. in few steps so that any employeer can find and get conected with you through us, your special skill talents, projects that you participate in and your area of experties are highlighted through our smart tags.</p>
+                                <h4>{{$home->job_applicants_title}}</h4>
+                                <p>{{$home->job_applicants_content}}</p>
                             </div>
                         </div>
 
@@ -651,41 +365,15 @@
                     <div class="col-lg-6 col-md-12">
                         <div class="partner-image">
                             <div class="row align-items-center">
-                                <div class="col-lg-4 col-sm-4 col-md-4 col-6">
-                                    <div class="image" data-aos="fade-right" data-aos-delay="50" data-aos-duration="500">
-                                        <a href="#" target="_blank"><img src="{{asset("assets/$dir/images/partner/bp.png")}}" alt="image"></a>
-                                    </div>
-                                </div>
 
-                                <div class="col-lg-4 col-sm-4 col-md-4 col-6">
-                                    <div class="image" data-aos="fade-down" data-aos-delay="70" data-aos-duration="700">
-                                        <a href="#" target="_blank"><img src="{{asset("assets/$dir/images/partner/airfrance.png")}}" alt="image"></a>
+                                @foreach($home->getMedia('Partner')->take(6) as $img)                                    
+                                    <div class="col-lg-4 col-sm-4 col-md-4 col-6">
+                                        <div class="image" data-aos="fade-left" data-aos-delay="90" data-aos-duration="900">
+                                            <a href="#" target="_blank"><img src="{{$img->getUrl()}}" alt="{{ $img->name }}"></a>
+                                        </div>
                                     </div>
-                                </div>
+                                @endforeach
 
-                                <div class="col-lg-4 col-sm-4 col-md-4 col-6">
-                                    <div class="image" data-aos="fade-left" data-aos-delay="90" data-aos-duration="900">
-                                        <a href="#" target="_blank"><img src="{{asset("assets/$dir/images/partner/cib.png")}}" alt="image"></a>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-4 col-sm-4 col-md-4 col-6">
-                                    <div class="image" data-aos="fade-right" data-aos-delay="70" data-aos-duration="700">
-                                        <a href="#" target="_blank"><img src="{{asset("assets/$dir/images/partner/total.png")}}" alt="image"></a>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-4 col-sm-4 col-md-4 col-6">
-                                    <div class="image" data-aos="fade-up" data-aos-delay="80" data-aos-duration="800">
-                                        <a href="#" target="_blank"><img src="{{asset("assets/$dir/images/partner/dhl.png")}}" alt="image"></a>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-4 col-sm-4 col-md-4 col-6">
-                                    <div class="image" data-aos="fade-left" data-aos-delay="90" data-aos-duration="900">
-                                        <a href="#" target="_blank"><img src="{{asset("assets/$dir/images/partner/vodafone.png")}}" alt="image"></a>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -694,7 +382,7 @@
                         <div class="partner-content">
                             <h3>{{ trans('home.partner_content_h3') }}</h3>
                             <p>
-                                We believe that our clients are our partners of success, We believe that in order to provide them with a flawless service offering, they have to be the focus of our every initiative and operation. We start with recognizing thier needs and from there stem our proposed solutions and services.
+                                {{$home->partner_content}}
                             </p>
                             <div class="layer-shape">
                                 <img src="{{asset("assets/$dir/images/partner/layer.png")}}" alt="image">
@@ -783,144 +471,4 @@
             </div>
         </div>
         <!-- End Newsletter Area -->
-        
-        <!-- Start Footer Area -->
-        <footer class="footer-area pt-100" id="contact">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="single-footer-widget">
-                            <div class="widget-logo">
-                                <a href="index.html"><img src="{{asset("assets/$dir/images/logo-2.png")}}" alt="image"></a>
-                            </div>
-                            <p>
-                                {{$settings->about}}
-                            </p>
-                            <ul class="widget-social-links">
-                                <li><span>{{ trans('home.follow') }}:</span></li>
-
-                                <li>
-                                    <a href="{{$settings->facebook}}" target="_blank">
-                                        <i class="flaticon-facebook"></i>
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a href="{{$settings->twitter}}" target="_blank">
-                                        <i class="flaticon-twitter"></i>
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a href="{{$settings->instagram}}" target="_blank">
-                                        <i class="flaticon-instagram"></i>
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a href="{{$settings->linkedin}}" target="_blank">
-                                        <i class="flaticon-linkedin"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="single-footer-widget ps-5">
-                            <h3>{{ trans('home.companies') }}</h3>
-
-                            <ul class="quick-links">
-                                <li><a href="#about">{{ trans('home.about') }}</a></li>
-                                <li><a href="#why">{{ trans('home.why') }}</a></li>
-                                <li><a href="#how">{{ trans('home.how') }}</a></li>
-                                <li><a href="#employeers">{{ trans('home.how') }} - {{ trans('home.employeers') }}</a></li>
-                                <li><a href="#applicants">{{ trans('home.how') }} - {{ trans('home.applicants') }}</a></li>
-                                <li><a href="#services">{{ trans('home.services') }}</a></li>
-                                <li><a href="#partners">{{ trans('home.partners') }}</a></li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-sm-6">
-                        <!-- <div class="single-footer-widget">
-                            <h3>Resources</h3>
-
-                            <ul class="quick-links">
-                                <li><a href="blog.html">Blog</a></li>
-                                <li><a href="dashboard-post-job.html">Post A Job</a></li>
-                                <li><a href="candidates-1.html">Candidates</a></li>
-                                <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                            </ul>
-                        </div> -->
-                    </div>
-
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="single-footer-widget">
-                            <h3>{{ trans('home.contact') }}</h3>
-                            
-                            <ul class="widget-info">
-                                <li>
-                                    <i style="font-size:18px; font-weight:900 ; color:white;">{{ trans('home.address_icon') }}</i>
-                                    {{$settings->address}}
-                                </li>
-
-                                <li>
-                                    <i style="font-size:18px; font-weight:900 ; color:white;">{{ trans('home.phone_icon') }}</i>
-                                    <a href="tel:{{$settings->phone}}">{{$settings->phone}}</a>
-                                </li>
-
-                                <li>
-                                    <i style="font-size:18px; font-weight:900 ; color:white;">{{ trans('home.fax_icon') }}</i>
-                                    <a href="tel:{{$settings->fax}}">{{$settings->fax}}</a>
-                                </li>
-
-                                <li>
-                                    <i style="font-size:18px; font-weight:900 ; color:white;">{{ trans('home.email_icon') }}</i>
-                                    <a href="mailto:{{$settings->email}}">{{$settings->email}}</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div>
-                            {!!$settings->map!!}
-                    </div>
-                </div>
-            </div>
-
-            <div class="copyright-area">
-                <div class="container">
-                    <p><i class="ri-copyright-line"></i> <script>document.write(new Date().getFullYear())</script> {{ trans('home.company_first') }}. {{ trans('home.rights') }} <a href="https://envytheme.com/" target="_blank">{{ trans('home.company_name') }}</a></p>
-                </div>
-            </div>
-        </footer>
-        <!-- End Footer Area -->
-
-        <!-- Start Go Top Area -->
-        <div class="go-top">
-            <i class="ri-arrow-up-line"></i>
-        </div>
-        <!-- End Go Top Area -->
-        
-        <!-- Links of JS files -->
-        <script src="{{asset("assets/$dir/js/jquery.min.js")}}"></script>
-        <script src="{{asset("assets/$dir/js/bootstrap.bundle.min.js")}}"></script>
-        <script src="{{asset("assets/$dir/js/jquery.meanmenu.js")}}"></script> 
-        <script src="{{asset("assets/$dir/js/owl.carousel.min.js")}}"></script>
-        <script src="{{asset("assets/$dir/js/jquery.appear.js")}}"></script>
-        <script src="{{asset("assets/$dir/js/odometer.min.js")}}"></script>
-        <script src="{{asset("assets/$dir/js/jquery.magnific-popup.min.js")}}"></script>
-        <script src="{{asset("assets/$dir/js/fancybox.min.js")}}"></script>
-        <script src="{{asset("assets/$dir/js/selectize.min.js")}}"></script>
-        <script src="{{asset("assets/$dir/js/TweenMax.min.js")}}"></script>
-        <script src="{{asset("assets/$dir/js/aos.js")}}"></script>
-        <script src="{{asset("assets/$dir/js/metismenu.min.js")}}"></script>
-        <script src="{{asset("assets/$dir/js/simplebar.min.js")}}"></script>
-        <script src="{{asset("assets/$dir/js/dropzone.min.js")}}"></script>
-        <script src="{{asset("assets/$dir/js/sticky-sidebar.min.js")}}"></script>
-		<script src="{{asset("assets/$dir/js/jquery.ajaxchimp.min.js")}}"></script>
-		<script src="{{asset("assets/$dir/js/form-validator.min.js")}}"></script>
-        <script src="{{asset("assets/$dir/js/contact-form-script.js")}}"></script>
-        <script src="{{asset("assets/$dir/js/wow.min.js")}}"></script>
-        <script src="{{asset("assets/$dir/js/main.js")}}"></script>
-    </body>
-</html>
+@endsection

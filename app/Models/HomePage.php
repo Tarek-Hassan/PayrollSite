@@ -24,6 +24,7 @@ class HomePage extends Model implements HasMedia
         'years_exper',
         'expert_at_service',
         'why_first_link',
+        
         'how_works_header_ar',
         'how_works_header_en',
         'how_works_Body_ar',
