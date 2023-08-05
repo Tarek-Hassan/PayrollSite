@@ -64,5 +64,7 @@ return [
         'coming_soon'=>'We Are Launching Soon',
         
         'content'=>'Content',
+        'about_first'=>'About First Egyptian',
+        'to_read'=>'Minute Read',
 ];
-// {{ trans('home.coming_soon') }}
+// {{ trans('home.about_first') }}

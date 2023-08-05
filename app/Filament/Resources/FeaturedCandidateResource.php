@@ -9,6 +9,7 @@ use Filament\Resources\Table;
 use Filament\Resources\Resource;
 use App\Models\FeaturedCandidate;
 use Filament\Forms\Components\Card;
+use Filament\Forms\Components\Grid;
 use Filament\Tables\Filters\Filter;
 use Filament\Forms\Components\Toggle;
 use Filament\Pages\Actions\EditAction;
@@ -39,17 +40,20 @@ class FeaturedCandidateResource extends Resource
             ->schema([
                 Card::make()
                 ->schema([
-                Forms\Components\TextInput::make('title_ar')
-                    ->required()
-                    ->disabled()
-                    ->placeholder('title_ar')
-                    ->maxLength(255),
+                    Grid::make(2)->schema([
 
-                Forms\Components\TextInput::make('title_en')
-                    ->placeholder('title_en')
-                    ->required()
-                    ->disabled()
-                    ->maxLength(255),
+                            Forms\Components\TextInput::make('title_ar')
+                                ->required()
+                                ->disabled()
+                                ->placeholder('title_ar')
+                                ->maxLength(255),
+
+                            Forms\Components\TextInput::make('title_en')
+                                ->placeholder('title_en')
+                                ->required()
+                                ->disabled()
+                                ->maxLength(255),
+                    ]),
 
                 Forms\Components\Textarea::make('content_ar')
                     ->required()
@@ -60,36 +64,39 @@ class FeaturedCandidateResource extends Resource
                     ->required()
                     ->placeholder('content_en')
                     ->maxLength(65535),
+                Grid::make(2)->schema([
+                    Forms\Components\TextInput::make('tag1_ar')
+                        ->required()
+                        ->placeholder('tag1_ar')
+                        ->disabled()
+                        ->maxLength(255),
 
-                Forms\Components\TextInput::make('tag1_ar')
-                    ->required()
-                    ->placeholder('tag1_ar')
-                    ->disabled()
-                    ->maxLength(255),
+                    Forms\Components\TextInput::make('tag1_en')
+                        ->required()
+                        ->placeholder('tag1_en')
+                        ->disabled()
+                        ->maxLength(255),
+                ]),
+                Grid::make(2)->schema([
+                    Forms\Components\TextInput::make('tag2_ar')
+                        ->required()
+                        ->placeholder('tag2_ar')
+                        ->disabled()
+                        ->maxLength(255),
 
-                Forms\Components\TextInput::make('tag1_en')
-                    ->required()
-                    ->placeholder('tag1_en')
-                    ->disabled()
-                    ->maxLength(255),
-
-                Forms\Components\TextInput::make('tag2_ar')
-                    ->required()
-                    ->placeholder('tag2_ar')
-                    ->disabled()
-                    ->maxLength(255),
-
-                Forms\Components\TextInput::make('tag2_en')
-                    ->required()
-                    ->placeholder('tag2_en')
-                    ->disabled()
-                    ->maxLength(255),
+                    Forms\Components\TextInput::make('tag2_en')
+                        ->required()
+                        ->placeholder('tag2_en')
+                        ->disabled()
+                        ->maxLength(255),
+                    ]),
 
                     SpatieMediaLibraryFileUpload::make('thumbnail')->collection('featured_candidate'),
                     Toggle::make('is_published')
                                 ->onColor('success')
                                 ->offColor('danger'),
             ])
+            
             ]);
     }
 

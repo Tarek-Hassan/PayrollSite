@@ -9,6 +9,7 @@ use Filament\Resources\Table;
 use App\Models\PartenerReview;
 use Filament\Resources\Resource;
 use Filament\Forms\Components\Card;
+use Filament\Forms\Components\Grid;
 use Filament\Tables\Filters\Filter;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
@@ -29,34 +30,38 @@ class PartenerReviewResource extends Resource
     {
         return $form
             ->schema([
-                Card::make()
-                ->schema([
-                Forms\Components\TextInput::make('name_en')
+                Card::make()->schema([
+                    Grid::make(2)->schema([
+                        Forms\Components\TextInput::make('name_en')
+                                ->required()
+                                ->maxLength(255),
+                        Forms\Components\TextInput::make('name_ar')
+                            ->required()
+                            ->maxLength(255),
+                        ]),
+                    Grid::make(2)->schema([
+                        Forms\Components\TextInput::make('postion_en')
+                            ->required()
+                            ->maxLength(255),
+                        Forms\Components\TextInput::make('postion_ar')
+                            ->required()
+                            ->maxLength(255),
+                        ]),
+            
+                    Forms\Components\Textarea::make('review_en')
                         ->required()
-                        ->maxLength(255),
-                Forms\Components\TextInput::make('name_ar')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('postion_en')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('postion_ar')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\Textarea::make('review_en')
-                    ->required()
-                    ->maxLength(142),
-                Forms\Components\Textarea::make('review_ar')
-                    ->required()
-                    ->maxLength(142),
-                Forms\Components\TextInput::make('rate')
-                    ->numeric()
-                    ->required(),
-                SpatieMediaLibraryFileUpload::make('thumbnail')->collection('partener_reviews'),
-                Forms\Components\Toggle::make('is_published')
-                ->onColor('success')
-                ->offColor('danger'),
-            ])
+                        ->maxLength(142),
+                    Forms\Components\Textarea::make('review_ar')
+                        ->required()
+                        ->maxLength(142),
+                    Forms\Components\TextInput::make('rate')
+                        ->numeric()
+                        ->required(),
+                    SpatieMediaLibraryFileUpload::make('thumbnail')->collection('partener_reviews'),
+                    Forms\Components\Toggle::make('is_published')
+                        ->onColor('success')
+                        ->offColor('danger'),
+                ])
             ]);
     }
 

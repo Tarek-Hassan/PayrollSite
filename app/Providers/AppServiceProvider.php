@@ -26,7 +26,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        view()->composer('*', function ($view) {
+        view()->composer(['layouts.*'], function ($view) {
             if (Session::has('locale')) {
                 App::setLocale(Session::get('locale'));
             }

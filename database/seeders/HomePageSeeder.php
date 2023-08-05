@@ -39,7 +39,7 @@ class HomePageSeeder extends Seeder
                     'how_works_footer_ar'=>'الباحثين عن تحديات جديدة بسوق العمل من الجاديين الذين يسعون للحصول علي فرص تبرز مهاراتهم وتنمي قدراتهم',
                     'how_works_footer_en'=>'Job Seekers who try to connect with employeers that need thier experties and talent',
                    
-                    'featured_candidates_title_ar'=>'>نحن ننتقي لك المهارة الخبرات التي تلاقي طموحاتك',
+                    'featured_candidates_title_ar'=>'نحن ننتقي لك المهارة الخبرات التي تلاقي طموحاتك',
                     'featured_candidates_title_en'=>'Find Talent From The Featured Ones For Your Job',
                     'featured_candidates_content_ar'=>'من الضروري لأي منظمة أن تتقن كشوف المرتبات وعمليات الموظفين التي غالبًا ما تكون معقدة وتحتمل أن تكون محفوفة بالمخاطر ،
                     الاستعانة بمصادر خارجية و الخبراء بمجال التعيينات تمكن المنظمة من تقليل المخاطر والوقت والمال وضمان أمن البيانات والتعامل الخبير مع هذه الوظائف',

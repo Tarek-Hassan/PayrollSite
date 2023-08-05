@@ -15,15 +15,36 @@ class CreateAboutsTable extends Migration
     {
         Schema::create('abouts', function (Blueprint $table) {
             $table->id();
-            $table->text('page-banner-content_ar');
-            $table->text('page-banner-content_en');
+            $table->text('page_banner_content_en');
+            $table->text('page_banner_content_ar');
+            $table->date('page_banner_date');
+            $table->integer('page_banner_read');
 
-            $table->string('title_ar');
-            $table->string('title_en');
-            $table->string('slug')->unique();
+//
+            $table->string('foundation_title_en');
+            $table->string('foundation_title_ar');
+            $table->longText('foundation_content_en');
+            $table->longText('foundation_content_ar');
 
-            $table->text('content_en');
-            $table->text('content_ar');
+            $table->string('vision_title_en');
+            $table->string('vision_title_ar');
+            $table->longText('vision_content_en');
+            $table->longText('vision_content_ar');
+
+            $table->string('mission_title_en');
+            $table->string('mission_title_ar');
+            $table->longText('mission_content_en');
+            $table->longText('mission_content_ar');
+
+            $table->string('values_principles_title_en');
+            $table->string('values_principles_title_ar');
+            $table->longText('values_principles_content_en');
+            $table->longText('values_principles_content_ar');
+
+            $table->string('team_title_en');
+            $table->string('team_title_ar');
+            $table->longText('team_content_en');
+            $table->longText('team_content_ar');
             
             $table->timestamps();
         });

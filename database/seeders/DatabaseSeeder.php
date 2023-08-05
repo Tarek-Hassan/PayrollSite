@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
             PartenerReviewSeeder::class,
             ServiceSeeder::class,
             SettingSeeder::class,
+            AboutSeeder::class,
 
         ]);
     }

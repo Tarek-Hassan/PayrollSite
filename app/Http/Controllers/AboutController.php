@@ -11,8 +11,10 @@ class AboutController extends Controller
     
     public function __invoke()
     {
-        // $about = About::first();
-        // return view('layouts.aboutUs',compact('about'));
-        return view('layouts.aboutUs');
+        
+        $about = About::first();
+
+        return view('layouts.aboutUs', compact('about'));
+
     }
 }

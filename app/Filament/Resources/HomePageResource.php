@@ -9,13 +9,14 @@ use Filament\Resources\Form;
 use Filament\Resources\Table;
 use Filament\Resources\Resource;
 use Filament\Forms\Components\Card;
+use Filament\Forms\Components\Grid;
+use Filament\Forms\Components\Tabs;
 use Filament\Forms\Components\Wizard;
 use Illuminate\Database\Eloquent\Builder;
 use App\Filament\Resources\HomePageResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 use App\Filament\Resources\HomePageResource\RelationManagers;
-use Filament\Forms\Components\Tabs;
 
 class HomePageResource extends Resource
 {
@@ -43,6 +44,8 @@ class HomePageResource extends Resource
                                 ->maxLength(255),
                         ]),
                         Tabs\Tab::make('About')->schema([
+                     
+                        Grid::make(2)->schema([
                             Forms\Components\TextInput::make('about_title_ar')
                                 ->required()
                                 
@@ -50,6 +53,8 @@ class HomePageResource extends Resource
                             Forms\Components\TextInput::make('about_title_en')
                                 ->required()
                                 ->maxLength(255),
+                            ]),
+                     
                             Forms\Components\Textarea::make('about_header_ar')
                                 ->required()
                                 ->maxLength(65535),
@@ -62,10 +67,13 @@ class HomePageResource extends Resource
                             Forms\Components\Textarea::make('about_footer_en')
                                 ->required()
                                 ->maxLength(65535),
+                           
+                            Grid::make(2)->schema([
                             Forms\Components\TextInput::make('years_exper')
                                 ->required(),
                             Forms\Components\TextInput::make('expert_at_service')
                                 ->required(),
+                            ]),
                         ]),
                         Tabs\Tab::make('Why First')->schema([
                             
@@ -93,13 +101,15 @@ class HomePageResource extends Resource
                                 ->maxLength(65535),
                         ]),
                         Tabs\Tab::make('Employeer')->schema([
-                            
+                       
+                        Grid::make(2)->schema([
                             Forms\Components\TextInput::make('featured_candidates_title_ar')
                                 ->required()
                                 ->maxLength(255),
                             Forms\Components\TextInput::make('featured_candidates_title_en')
                                 ->required()
                                 ->maxLength(255),
+                            ]),
                             Forms\Components\Textarea::make('featured_candidates_content_ar')
                                 ->required()
                                 ->maxLength(65535),
@@ -109,12 +119,15 @@ class HomePageResource extends Resource
                             
                         ]),
                         Tabs\Tab::make('Job Applicants')->schema([
+                     
+                        Grid::make(2)->schema([
                             Forms\Components\TextInput::make('job_applicants_title_ar')
                                 ->required()
                                 ->maxLength(255),
                             Forms\Components\TextInput::make('job_applicants_title_en')
                                 ->required()
                                 ->maxLength(255),
+                            ]),
                             Forms\Components\Textarea::make('job_applicants_content_ar')
                                 ->required()
                                 ->maxLength(65535),
