@@ -76,7 +76,7 @@
                 <div class="container">
                     <div class="main-responsive-menu">
                         <div class="logo">
-                            <a href="index.html">
+                            <a href="/">
                                 <img src="{{asset("assets/$dir/images/logo.png")}}" class="black-logo" alt="image">
                                 <img src="{{asset("assets/$dir/images/logo-2.png")}}" class="white-logo" alt="image">
                             </a>
@@ -88,7 +88,7 @@
             <div class="main-navbar">
                 <div class="container-fluid">
                     <nav class="navbar navbar-expand-md navbar-light">
-                        <a class="navbar-brand" href="index.html">
+                        <a class="navbar-brand" href="/">
                             <img src="{{asset("assets/$dir/images/logo.png")}}" class="black-logo" alt="image">
                             <img src="{{asset("assets/$dir/images/logo-2.png")}}" class="white-logo" alt="image">
                         </a>
@@ -174,7 +174,7 @@
                     <div class="col-lg-3 col-sm-6">
                         <div class="single-footer-widget">
                             <div class="widget-logo">
-                                <a href="index.html"><img src="{{asset("assets/$dir/images/logo-2.png")}}" alt="image"></a>
+                                <a href="/"><img src="{{asset("assets/$dir/images/logo-2.png")}}" alt="image"></a>
                             </div>
                             <p>
                                 {{$settings->about}}

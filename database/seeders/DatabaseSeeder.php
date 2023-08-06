@@ -20,6 +20,9 @@ class DatabaseSeeder extends Seeder
             ServiceSeeder::class,
             SettingSeeder::class,
             AboutSeeder::class,
+            //
+            LayerTypeSeeder::class,
+            IncomeTaxSeeder::class,
 
         ]);
     }

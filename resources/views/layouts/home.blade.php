@@ -216,7 +216,6 @@
                             @endforeach
 
 
-
                             <div class="featured-candidates-btn">
                                 <a href="#">{{ trans('home.view_all_Services') }}<i class="flaticon-right-arrow"></i></a>
                             </div>
@@ -264,6 +263,7 @@
                                 </div>
                             </div>
                         </div>
+                        
                     </div>
                 </div>
 

@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\{HomeController,SubscribeController,AboutController};
+use App\Http\Controllers\{HomeController,SubscribeController,AboutController,PayrollCalculationController};
 use App\Http\Controllers\LangController;
 
 /*
@@ -21,6 +21,7 @@ Route::post('subscribe',SubscribeController::class)->name('subscribe.store');
 Route::get('/lang/{lang}', LangController::class)->name('change-lang');
 
 Route::get('about',AboutController::class)->name('about');
+Route::get('payroll-calculation',PayrollCalculationController::class)->name('PayrollCalculations');
 
 Route::get('coming_soon',function(){
     return view('layouts.coming_soon');

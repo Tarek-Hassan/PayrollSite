@@ -16,4 +16,8 @@ class EditAbout extends EditRecord
             // Actions\DeleteAction::make(),
         ];
     }
+    protected function getTitle(): string
+    {
+        return 'Edit  About Us';
+    }
 }
