@@ -11,34 +11,34 @@ class PayrollCalculationController extends Controller
     
     public function __invoke(Request $request)
     {
-        $net=0;
-        $gross=0;
+        $netSalary=0;
+        $grossSalary=0;
         $incomeTax=0;
         $sovergin=0;
         // $type = $request->type;
-        // $value = $request->value;
+        // $Salary = $request->Salary;
         // $socialInsurance = $request->socialInsurance;
 
         // $type = 'net';
         // $socialInsurance=0;
-        // $value=0;
+        // $Salary=0;
 
         $type = 'gross';
         $socialInsurance=0;
-        $value=0;
-        
+        $Salary=0;
+
         if($type == 'net'){
-            $net = $value;
-            $gross = $net + $socialInsurance;
+            $netSalary = $Salary;
+            $grossSalary = $netSalary + $socialInsurance;
         }else{
-            $gross = $value;
-            $net = $gross - $socialInsurance;
+            $grossSalary = $Salary;
+            $netSalary = $grossSalary - $socialInsurance;
         }
 
 
         $payroll = [
-            'net' => $net,
-            'gross' => $gross,
+            'netSalary' => $netSalary,
+            'grossSalary' => $grossSalary,
             'socialInsurance' => $socialInsurance,
             'incomeTax' => $incomeTax,
             'sovergin' => $sovergin,
