@@ -5,43 +5,48 @@ namespace App\Http\Controllers;
 use App\Models\About;
 use App\Models\Subscribe;
 use Illuminate\Http\Request;
+use App\ViewModel\PayrollCalculationViewModel;
+use App\ViewModel\PayrollNetCalculationViewModel;
 
 class PayrollCalculationController extends Controller
 {
     
     public function __invoke(Request $request)
     {
-        $netSalary=0;
-        $grossSalary=0;
-        $incomeTax=0;
-        $sovergin=0;
         // $type = $request->type;
         // $Salary = $request->Salary;
-        // $socialInsurance = $request->socialInsurance;
-
-        // $type = 'net';
-        // $socialInsurance=0;
-        // $Salary=0;
+        // $socialInsurance = $request->socialInsurance;   
+        // net-gross
 
         $type = 'gross';
-        $socialInsurance=0;
-        $Salary=0;
+        // // $socialInsurance=1100;
+        // // $Salary=10000;
+        $socialInsurance=1199;
+        $Salary=70000;
+        // $type = 'net';
+        // $socialInsurance=1199;
+        // $Salary=10000;
+        // $socialInsurance=1199;
+        // $Salary=20000;
+        // $socialInsurance=1199;
+        // $Salary=50000;
+        // $socialInsurance=1199;
+        // $Salary=70000;
 
+        
         if($type == 'net'){
-            $netSalary = $Salary;
-            $grossSalary = $netSalary + $socialInsurance;
+            $payrollCalculation = new PayrollNetCalculationViewModel($Salary, $socialInsurance);
         }else{
-            $grossSalary = $Salary;
-            $netSalary = $grossSalary - $socialInsurance;
+            $payrollCalculation = new PayrollCalculationViewModel($Salary, $socialInsurance);
         }
 
-
         $payroll = [
-            'netSalary' => $netSalary,
-            'grossSalary' => $grossSalary,
-            'socialInsurance' => $socialInsurance,
-            'incomeTax' => $incomeTax,
-            'sovergin' => $sovergin,
+            'socialInsurance' => $payrollCalculation->getemployeeSocialInsurance(),
+            'grossSalary' => $payrollCalculation->getGross(),
+            'netSalary' => $payrollCalculation->getNetSalary(),
+            'incomeTax' => $payrollCalculation->getFinalIncomeTax(),
+            'sovergin' => $payrollCalculation->getSovereignValue(),
+            'soverginTax' => $payrollCalculation->getSovereignTax(),
         ];
         dd($payroll);
         return view('layouts.payroll', compact('payroll'));
