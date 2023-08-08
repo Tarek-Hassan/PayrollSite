@@ -48,13 +48,10 @@ class PayrollCalculationViewModel
         return $this->getGross() * 0.0005;
     }
 
-    public function getTotalGrossSovereignElement(){
-        $sliceRate = $this->incomeTaxSlice ? $this->incomeTaxSlice->rate : 0;
-        return $this->getSovereignValue() * (100 / (100 - $sliceRate));
-    }
+
 
     public function getSovereignTax(){
-        return $this->getTotalGrossSovereignElement() - $this->getSovereignValue();
+        return 0;
     }
 
 
@@ -116,8 +113,6 @@ class PayrollCalculationViewModel
         $this->incomeTax = $totalIncomeTax / 12;
 
     }
-
-
 
     public function getIncomeTaxSlices()
     {

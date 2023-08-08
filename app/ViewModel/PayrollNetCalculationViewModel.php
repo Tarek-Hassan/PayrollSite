@@ -8,9 +8,7 @@ use App\ViewModel\PayrollCalculationViewModel;
 class PayrollNetCalculationViewModel extends PayrollCalculationViewModel
 {
 
-    // public $incomeTaxSlice;
     public $sovereignTax = 0;
-    public $slicesInfo = [];
 
     public function getNetTaxBase(){
         return $this->getAnnualNetSalary() - $this->getPersonalExemption();
@@ -43,23 +41,13 @@ class PayrollNetCalculationViewModel extends PayrollCalculationViewModel
                 }
 
                 $totalIncomeTax += $total;
-                $this->slicesInfo[] = [
-                    'taxbase' => $taxbase,
-                    'ratio' => $ratio,
-                    'diff' => $diff,
-                    'minimum_net' => floatVal($Slice->minimum_net),
-                    'maximum_net' => floatVal($Slice->maximum_net),
-                    'total' => $total,
-                    'totalIncomeTax' => $totalIncomeTax,
-                ];
+
                 $taxbase -= $diff;
             }
 
             $condition = $condition - $diff;
         }
-
         $this->incomeTax = $totalIncomeTax / 12;
-        // dump("slicesInfo",$this->slicesInfo,"totalIncomeTax",$totalIncomeTax,"incomeTax",$this->incomeTax);
     }
 
     public function getIncomeTaxSlices(){

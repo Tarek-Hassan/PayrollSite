@@ -13,23 +13,22 @@ class PayrollCalculationController extends Controller
     
     public function __invoke(Request $request)
     {
-        // $type = $request->type;
-        // $Salary = $request->Salary;
-        // $socialInsurance = $request->socialInsurance;   
+        $type = $request->type;
+        $Salary = $request->Salary;
+        $socialInsurance = $request->socialInsurance;   
         // net-gross
-
-        $type = 'gross';
-        // // $socialInsurance=1100;
-        // // $Salary=10000;
-        $socialInsurance=1199;
-        $Salary=70000;
+        // // $type = 'gross';
+        // // // // $socialInsurance=1100;
+        // // // // $Salary=10000;
+        // // $socialInsurance=1199;
+        // // $Salary=70000;
         // $type = 'net';
-        // $socialInsurance=1199;
-        // $Salary=10000;
-        // $socialInsurance=1199;
-        // $Salary=20000;
-        // $socialInsurance=1199;
-        // $Salary=50000;
+        // // $socialInsurance=1199;
+        // // $Salary=10000;
+        // // $socialInsurance=1199;
+        // // $Salary=20000;
+        // // $socialInsurance=1199;
+        // // $Salary=50000;
         // $socialInsurance=1199;
         // $Salary=70000;
 
