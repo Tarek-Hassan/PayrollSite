@@ -237,6 +237,9 @@
                                 <h3>{{ trans('home.job_applicants') }}</h3>
                                 <h4>{{$home->job_applicants_title}}</h4>
                                 <p>{{$home->job_applicants_content}}</p>
+                                <div class="overview-content-btn pt-100">
+                                    <a href="{{route('PayrollCalculations')}}" target="_blank">{{ trans('home.payroll_oper') }}<i class="flaticon-right-arrow"></i></a>
+                                </div>
                             </div>
                         </div>
 
@@ -262,7 +265,10 @@
                                     </div>
                                 </div>
                             </div>
+
                         </div>
+
+
                         
                     </div>
                 </div>
@@ -472,3 +478,21 @@
         </div>
         <!-- End Newsletter Area -->
 @endsection
+@push('styles')
+    <style>
+        .overview-area .overview-content-btn a {
+            font-size: var(--font-size);
+            font-weight: bold;
+            color: var(--optional-color);
+            text-align: center;
+
+            }
+
+        .overview-area .overview-content a i {
+            font-size: 20px;
+            position: relative;
+            top: 5px;
+            color: var(--main-color);
+            }
+    </style>
+@endpush

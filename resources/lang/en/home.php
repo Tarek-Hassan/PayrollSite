@@ -66,5 +66,16 @@ return [
         'content'=>'Content',
         'about_first'=>'About First Egyptian',
         'to_read'=>'Minute Read',
+        'payroll_oper'=>'Payroll Operations',
+        'gross'=>'Gross',
+        'net'=>'Net',
+        
+        'salary'=>'Salary',
+        'socialInsurance'=>'Social Insurance',
+        'type'=>'Type',
+        'select'=>'Select',
+        'calculate'=>'Calculate',
+        'reset'=>'Reset',
+
 ];
 // {{ trans('home.about_first') }}

@@ -51,7 +51,7 @@ class PayrollCalculationViewModel
 
 
     public function getSovereignTax(){
-        return 0;
+        return null;
     }
 
 

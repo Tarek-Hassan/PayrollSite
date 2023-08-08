@@ -64,7 +64,15 @@ return [
     'content'=>'المحتوي',
     'about_first'=>'حول المصرية الأولي',
     'to_read'=>'دقائق قراءة',
-
+    'payroll_oper'=>'احتساب الرواتب ',
+    'gross'=>'الإجمالي',
+    'net'=>'الصافي',
+    'salary'=>'الراتب',
+    'socialInsurance'=>'التأمينات الإجتماعية',
+    'type'=>'النوع',
+    'select_type'=>'اختر النوع',
+    'calculate'=>'احسب',
+    'reset'=>'مسح',
 ];
 // {{ trans('home.content') }}
 // {{($dir == 'rtl')?'ltr':''}}
