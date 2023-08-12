@@ -73,6 +73,11 @@ return [
     'select_type'=>'اختر النوع',
     'calculate'=>'احسب',
     'reset'=>'مسح',
+    'grossSalary'=>'الراتب الإجمالي',
+    'netSalary'=>'الراتب الصافي',
+    'incomeTax'=>'ضريبة الدخل',
+    'sovergin'=>'الشهداء',
+    'soverginTax'=>'ضريبة الشهداء',
 ];
 // {{ trans('home.content') }}
 // {{($dir == 'rtl')?'ltr':''}}

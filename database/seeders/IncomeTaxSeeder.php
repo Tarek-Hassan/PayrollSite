@@ -443,7 +443,7 @@ class IncomeTaxSeeder extends Seeder
                 'ratio' => 29.032258064516,
                 'max_tax_value' => 90000,
                 'slice_net_value' => 310000,
-                'minimum_net' => 160000,
+                'minimum_net' => 0,
                 'maximum_net' => 310000,
             ],
             [

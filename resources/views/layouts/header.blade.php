@@ -60,10 +60,10 @@
                 url('{{asset("assets/$dir/fonts/remixicon.svg?t=1590207869815#remixicon")}}') format('svg'); /* iOS 4.1- */
                 font-display: swap;
                 }
-            .review-info .image{
+        .review-info .image{
                 width: 100px;
                 height: 100px;
-            }
+        }
     </style>
     @stack('styles')
 </head>

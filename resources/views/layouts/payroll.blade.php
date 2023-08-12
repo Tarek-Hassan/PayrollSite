@@ -1,8 +1,8 @@
 @extends('layouts.app')
 @section('content')
+<div class="widget-content p-5">
 <form action="{{ route('PayrollCalculations') }}" method="GET">
 
-    <div class="widget-content mb-4">
         <fieldset>
             <div class="row">
                 <div class="col-md-3">
@@ -38,16 +38,14 @@
                 </div>
             </div>
         </fieldset>
-    </div>
 </form>
 <hr />
 
-<div class="widget-content mx-4">
     <fieldset>
         @foreach($payroll as $key => $value)
             <div class="row">
                 <div class="col-md-3">
-                    <label for="name">{{ $key }}</label>
+                    <label for="name">{{trans('home.'.$key)}}</label>
                     <input type="text" class="form-control" value="{{ $value }}" disabled>
                 </div>
             </div>

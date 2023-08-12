@@ -70,6 +70,13 @@ return [
         'gross'=>'Gross',
         'net'=>'Net',
         
+        'grossSalary'=>'Gross Salary',
+        'netSalary'=>'Net Salary',
+        'incomeTax'=>'Income Tax',
+        'sovergin'=>'Martyrs',
+        'soverginTax'=>'Martyrs Tax',
+
+
         'salary'=>'Salary',
         'socialInsurance'=>'Social Insurance',
         'type'=>'Type',

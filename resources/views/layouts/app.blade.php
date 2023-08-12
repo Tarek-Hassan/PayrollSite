@@ -96,60 +96,60 @@
                         <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
                             <ul class="navbar-nav m-auto">
                                 <li class="nav-item">
-                                    <!-- <a href="#" class="nav-link active">
+                                    <!-- <a href="/#" class="nav-link active">
                                         Home 
                                     </a> -->
                                 <li class="nav-item">
-                                    <a href="#about" class="nav-link">
+                                    <a href="/#about" class="nav-link">
                                         {{ trans('home.about') }}
                                     </a>
                                 </li>
 
                                 <li class="nav-item">
-                                    <a href="#why" class="nav-link">
+                                    <a href="/#why" class="nav-link">
                                         {{ trans('home.why') }}
                                     </a>
                                 </li>
 
                                 <li class="nav-item">
-                                    <a href="#how" class="nav-link">
+                                    <a href="/#how" class="nav-link">
                                         {{ trans('home.how') }}
                                     </a>
                                     <ul class="dropdown-menu">
                                         <li class="nav-item">
-                                            <a href="#employeers" class="nav-link">{{ trans('home.employeers') }}</a>
+                                            <a href="/#employeers" class="nav-link">{{ trans('home.employeers') }}</a>
                                         </li>
 
                                         <li class="nav-item">
-                                            <a href="#applicants" class="nav-link">{{ trans('home.applicants') }}</a>
+                                            <a href="/#applicants" class="nav-link">{{ trans('home.applicants') }}</a>
                                         </li>
                                     </ul>
                                 </li>
 
                                 <li class="nav-item">
-                                    <a href="#services" class="nav-link">
+                                    <a href="/#services" class="nav-link">
                                         {{ trans('home.services') }}
                                     </a>
                                 </li>
 
                                 <li class="nav-item">
-                                    <a href="#partners" class="nav-link">
+                                    <a href="/#partners" class="nav-link">
                                         {{ trans('home.partners') }}
                                     </a>
                                 </li>
 
                                 <li class="nav-item">
-                                    <a href="#reviews" class="nav-link">
+                                    <a href="/#reviews" class="nav-link">
                                         {{ trans('home.reviews') }}
                                     </a>
                                 </li>
                                 
                                 <li class="nav-item">
-                                    <a href="#subscribe" class="nav-link">{{ trans('home.subscribe') }}</a>
+                                    <a href="/#subscribe" class="nav-link">{{ trans('home.subscribe') }}</a>
                                 </li>
 
                                 <li class="nav-item">
-                                    <a href="#contact" class="nav-link">{{ trans('home.contact') }}</a>
+                                    <a href="/#contact" class="nav-link">{{ trans('home.contact') }}</a>
                                 </li>
                             </ul>
 
@@ -214,13 +214,13 @@
                             <h3>{{ trans('home.companies') }}</h3>
 
                             <ul class="quick-links">
-                                <li><a href="#about">{{ trans('home.about') }}</a></li>
-                                <li><a href="#why">{{ trans('home.why') }}</a></li>
-                                <li><a href="#how">{{ trans('home.how') }}</a></li>
-                                <li><a href="#employeers">{{ trans('home.how') }} - {{ trans('home.employeers') }}</a></li>
-                                <li><a href="#applicants">{{ trans('home.how') }} - {{ trans('home.applicants') }}</a></li>
-                                <li><a href="#services">{{ trans('home.services') }}</a></li>
-                                <li><a href="#partners">{{ trans('home.partners') }}</a></li>
+                                <li><a href="/#about">{{ trans('home.about') }}</a></li>
+                                <li><a href="/#why">{{ trans('home.why') }}</a></li>
+                                <li><a href="/#how">{{ trans('home.how') }}</a></li>
+                                <li><a href="/#employeers">{{ trans('home.how') }} - {{ trans('home.employeers') }}</a></li>
+                                <li><a href="/#applicants">{{ trans('home.how') }} - {{ trans('home.applicants') }}</a></li>
+                                <li><a href="/#services">{{ trans('home.services') }}</a></li>
+                                <li><a href="/#partners">{{ trans('home.partners') }}</a></li>
                             </ul>
                         </div>
                     </div>

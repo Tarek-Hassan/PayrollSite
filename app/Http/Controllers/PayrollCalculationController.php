@@ -40,12 +40,14 @@ class PayrollCalculationController extends Controller
             }
 
             $payroll = [
-                'socialInsurance' => $payrollCalculation->getemployeeSocialInsurance(),
-                'grossSalary' => $payrollCalculation->getGross(),
-                'netSalary' => $payrollCalculation->getNetSalary(),
-                'incomeTax' => $payrollCalculation->getFinalIncomeTax(),
-                'sovergin' => $payrollCalculation->getSovereignValue(),
-                'soverginTax' => $payrollCalculation->getSovereignTax(),
+                'grossSalary' => round($payrollCalculation->getGross(),3),
+                'netSalary' => round($payrollCalculation->getNetSalary(),3),
+                'socialInsurance' => round($payrollCalculation->getemployeeSocialInsurance(),3),
+                'incomeTax' => round($payrollCalculation->getFinalIncomeTax(),3),
+                'sovergin' => round($payrollCalculation->getSovereignValue(),3),
+                'soverginTax' => $payrollCalculation->getSovereignTax()
+                                         ? round($payrollCalculation->getSovereignTax()??0,3)
+                                         : null ,
             ];
         }
 
