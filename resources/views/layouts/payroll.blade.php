@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 <div class="widget-content p-5">
-<form action="{{ route('PayrollCalculations') }}" method="GET">
+    <form action="{{ route('PayrollCalculations') }}" method="GET">
 
         <fieldset>
             <div class="row">
@@ -38,31 +38,30 @@
                 </div>
             </div>
         </fieldset>
-</form>
-<hr />
+    </form>
+    <hr />
 
-<div class="row pb-75">
-<div class="col-md-4">
-	<fieldset>
-        @foreach($payroll as $key => $value)
-            <div class="row">
-                <div class="col-md-12">
-                    <label for="name">{{trans('home.'.$key)}}</label>
-                    <input type="text" class="form-control" value="{{ $value }}" disabled>
-                </div>
+    <div class="row pb-75">
+        <div class="col-md-4">
+            <fieldset>
+                @foreach($payroll as $key => $value)
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label for="name">{{ trans('home.'.$key) }}</label>
+                            <input type="text" class="form-control" value="{{ $value }}" disabled>
+                        </div>
+                    </div>
+                @endforeach
+            </fieldset>
+        </div>
+        @if($payroll)
+            <div class="col-md-8">
+                <img src="{{ asset("assets/$dir/images/Payroll-Servies.png") }}" alt="image">
             </div>
-        @endforeach
-        </fieldset>
-</div>
-@if($payroll)
-<div class="col-md-8">
-   <img src="{{asset("assets/$dir/images/Payroll-Servies.png")}}" alt="image">
-</div>
-@endif
-</div>
+        @endif
+    </div>
 
 
-    
 
-@endsection
 
+    @endsection

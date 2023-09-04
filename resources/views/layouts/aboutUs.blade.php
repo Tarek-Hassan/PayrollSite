@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-        
+
         <!-- Start Page Banner Area -->
         <div class="page-banner-area">
             <div class="d-table">
@@ -14,7 +14,7 @@
             </div>
         </div>
         <!-- End Page Banner Area -->
-        
+
         <!-- Start Blog Details Area -->
         <div class="blog-details-area pt-100">
             <div class="container">
@@ -23,7 +23,7 @@
                         <aside class="widget-area">
                             <div class="widget widget_eeza_posts_thumb">
                                 <h3 class="widget-title">{{ trans('home.content') }}</h3>
-                                
+
                                 <article class="item">
                                     <div class="info">
                                         <h4><a href="#{{$about->foundation_title_en}}"> {{$about->foundation_title}}</a></h4>
@@ -55,7 +55,7 @@
                                         <a href="#" class="arrow-icon"><i class="ri-arrow-right-line"></i></a>
                                     </div>
                                 </article>
-    
+
                             </div>
                         </aside>
                     </div>
@@ -66,7 +66,7 @@
                                 <h3>{{ trans('home.about_first') }}</h3>
 
                                 <ul class="entry-meta">
-                                    
+
                                     <li><i class="ri-calendar-line"></i> {{$about->page_banner_date}}</li>
                                     <li><i class="ri-time-line"></i> {{$about->page_banner_read}} {{ trans('home.to_read') }}</li>
                                     <!-- <li><i class="ri-chat-1-line"></i> 03 Comments</li> -->
@@ -105,14 +105,11 @@
         </div>
         <!-- End Blog Details Area -->
 
-
-
-
 @endsection
 @push('styles')
     <style>
         .page-banner-area {
             background-image: url({{asset("assets/$dir/images/race-first-gray.jpg")}});
-        }    
+        }
     </style>
 @endpush

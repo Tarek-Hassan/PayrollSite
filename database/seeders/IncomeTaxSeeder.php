@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\IncomeTax;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Artisan;
 
 class IncomeTaxSeeder extends Seeder
 {
@@ -15,6 +16,7 @@ class IncomeTaxSeeder extends Seeder
      */
     public function run()
     {
+        // Artisan::call('update:income-tax');
         // DB::table('income_taxes')->truncate();
         $incomeTax = IncomeTax::create([
             'name_ar' => 'قانون رقم 2023',
@@ -29,7 +31,7 @@ class IncomeTaxSeeder extends Seeder
             'net_min' => 0,
             'net_max' => 472875,
         ]);
-        
+
         $layer1->incomeTaxLayerSlice()->createMany([
             [
                 'income_tax_id' => $incomeTax->id,

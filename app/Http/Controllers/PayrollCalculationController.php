@@ -3,41 +3,31 @@
 namespace App\Http\Controllers;
 
 use App\Models\About;
+use App\Models\IncomeTax;
 use App\Models\Subscribe;
 use Illuminate\Http\Request;
+use App\Models\IncomeTaxLayer;
+use Illuminate\Support\Facades\DB;
+use App\Models\IncomeTaxLayerSlice;
+use App\Http\Controllers\Controller;
 use App\ViewModel\PayrollCalculationViewModel;
 use App\ViewModel\PayrollNetCalculationViewModel;
 
 class PayrollCalculationController extends Controller
 {
-    
-    // $type = 'gross';
-    // $socialInsurance=1100;
-    // $salary=10000;
-    // // $socialInsurance=1199;
-    // // $Salary=70000;
-    // // $type = 'net';
-    // // $socialInsurance=1199;
-    // // $Salary=10000;
-    // // $socialInsurance=1199;
-    // // $Salary=20000;
-    // // $socialInsurance=1199;
-    // // $Salary=50000;
-    // // $socialInsurance=1199;
-    // // $Salary=70000;
+
     public function __invoke(Request $request)
     {
-        
+
         $payroll=[];
         if($request->all()){
             $type = $request->type;
             $salary = $request->salary;
-            $socialInsurance = $request->socialInsurance;  
-            if($type == 'net'){
-                $payrollCalculation = new PayrollNetCalculationViewModel($salary, $socialInsurance);
-            }else{
-                $payrollCalculation = new PayrollCalculationViewModel($salary, $socialInsurance);
-            }
+            $socialInsurance = $request->socialInsurance;
+
+            $payrollCalculation = ($type == 'net')  ? new PayrollNetCalculationViewModel($salary, $socialInsurance)
+                                                    : new PayrollCalculationViewModel($salary, $socialInsurance);
+
 
             $payroll = [
                 'grossSalary' => round($payrollCalculation->getGross(),3),
@@ -51,10 +41,10 @@ class PayrollCalculationController extends Controller
             ];
         }
 
-       
         $payroll = array_filter($payroll, function($value) {
             return !is_null($value) && $value !== 0;
-        });        
+        });
         return view('layouts.payroll', compact('payroll'));
     }
+
 }
