@@ -13,7 +13,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: rsync
       run: rsync -rcvl --exclude /.git* --exclude /.env* --exclude .editorconfig --exclude .idea --exclude /.styleci.yml --exclude *.rar ./ ${{ secrets.DEPLOYPATH }}/
-    - name: php8.0 /usr/local/bin/composer install
-      run: cd ${{ secrets.DEPLOYPATH }}/ && composer install
-    - name: php8.0 artisan migrate
-      run: cd ${{ secrets.DEPLOYPATH }}/ && php artisan migrate
+    - name: composer install
+      run: cd ${{ secrets.DEPLOYPATH }}/ && php8.0 /usr/local/bin/composer install
+    - name: artisan migrate
+      run: cd ${{ secrets.DEPLOYPATH }}/ && php8.0 artisan migrate
