@@ -15,5 +15,3 @@ jobs:
       run: rsync -rcvl --exclude /.git* --exclude /.env* --exclude .editorconfig --exclude .idea --exclude /.styleci.yml --exclude *.rar ./ ${{ secrets.DEPLOYPATH }}/
     - name: composer install
       run: cd ${{ secrets.DEPLOYPATH }}/ && php8.0 /usr/local/bin/composer install
-    - name: artisan migrate
-      run: cd ${{ secrets.DEPLOYPATH }}/ && php8.0 artisan migrate
