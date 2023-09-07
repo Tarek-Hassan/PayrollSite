@@ -1,0 +1,19 @@
+name: first-egyptian.sanasoftware.net
+
+on:
+  push:
+    branches: [ deploy ]
+
+jobs:
+  backend-deploy:
+
+    runs-on: first-egyptian
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: rsync
+      run: rsync -rcvl --exclude /.git* --exclude /.env* --exclude .editorconfig --exclude .idea --exclude /.styleci.yml --exclude *.rar ./ ${{ secrets.DEPLOYPATH }}/
+    - name: composer install
+      run: cd ${{ secrets.DEPLOYPATH }}/ && composer install
+    - name: php artisan migrate
+      run: cd ${{ secrets.DEPLOYPATH }}/ && php artisan migrate
