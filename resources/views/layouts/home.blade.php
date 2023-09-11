@@ -2,12 +2,15 @@
 @section('content')
 
         <!-- Start Main Banner Area -->
-        <div class="main-banner-area">
+        <div class="main-banner-area" role="banner">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-5 col-md-12">
                         <div class="main-banner-text-with-image">
-                            <img src="{{asset("assets/$dir/images/main-banner/banner-one/logo-text-gif.gif")}}" alt="gif">
+                            <video autoplay loop muted playsinline>
+                                <source src="{{asset("assets/$dir/images/main-banner/banner-one/logo-text.mp4")}}" type="video/mp4">
+                            </video>
+                            {{-- <img src="{{asset("assets/$dir/images/main-banner/banner-one/logo-text-gif.gif")}}" alt="gif"> --}}
                         </div>
                     </div>
 
@@ -20,7 +23,7 @@
                             @endif
                             <p>
                                {{$home->main_banner_content}}
-                            </p>    
+                            </p>
                             <div class="banner-btn">
                                 <a href="{{$home->main_banner_link}}" class="default-btn">{{ trans('home.download_brochure') }}<i class="flaticon-list-1"></i></a>
                             </div>
@@ -47,7 +50,7 @@
 
                     <div class="col-lg-6 col-md-12">
                         <div class="about-content" data-aos="fade-{{$direction}}" data-aos-delay="70" data-aos-duration="700">
-                            <h3 style="color:#b42025;">{{ trans('home.company_first') }}</h3></b><h3> {{$home->about_title}}</h3>
+                            <h2 style="color:#b42025;">{{ trans('home.company_first') }}</h2></b><h3> {{$home->about_title}}</h3>
                             <p> {{$home->about_header}} </p>
                             <p>
                                 {{$home->about_footer}}
@@ -83,7 +86,7 @@
             </div>
         </div>
         <!-- End About Area -->
-        
+
         <!-- Start Why First Area-->
         <div class="play-video-area ptb-100" id="why">
             <div class="container">
@@ -120,7 +123,7 @@
                 <div class="section-title">
                     <h2>{{trans('home.how_works_area') }} <span style="color:#b42025;">{{ trans('home.company') }}</span> {{ trans('home.works') }}</h2>
                     <p>{{$home->how_works_header}}</p>
-                    <p>{{$home->how_works_Body}} </p> 
+                    <p>{{$home->how_works_Body}} </p>
                     <p>{{$home->how_works_footer}}</p>
                 </div>
             </div>
@@ -174,7 +177,7 @@
                     <div class="col-lg-6 col-md-12">
                         <div class="featured-candidates-item">
                             <div class="featured-candidates-content">
-                                <h3>{{ trans('home.employeers') }}</h3>   
+                                <h3>{{ trans('home.employeers') }}</h3>
                                 <h4>{{$home->featured_candidates_title}}</h4>
                                 <p>
                                     {{$home->featured_candidates_content}}
@@ -217,7 +220,7 @@
 
 
                             <div class="featured-candidates-btn">
-                                <a href="#">{{ trans('home.view_all_Services') }}<i class="flaticon-right-arrow"></i></a>
+                                <a href="#services">{{ trans('home.view_all_Services') }}<i class="flaticon-right-arrow"></i></a>
                             </div>
                         </div>
                     </div>
@@ -269,7 +272,7 @@
                         </div>
 
 
-                        
+
                     </div>
                 </div>
 
@@ -285,7 +288,7 @@
                                     <img src="{{asset("assets/$dir/images/job-seeker/seeker-1.png")}}" alt="image">
                                 </div>
                                 <h3>{{ trans('home.create_account') }}</h3>
-                                
+
                                 <div class="step">{{ trans('home.step_1') }}</div>
                             </div>
 
@@ -300,7 +303,7 @@
                                     <img src="{{asset("assets/$dir/images/job-seeker/seeker-2.png")}}" alt="image">
                                 </div>
                                 <h3>{{ trans('home.submit_resume') }}</h3>
-                                
+
                                 <div class="step">{{ trans('home.step_2') }}</div>
                             </div>
 
@@ -315,7 +318,7 @@
                                     <img src="{{asset("assets/$dir/images/job-seeker/seeker-3.png")}}" alt="image">
                                 </div>
                                 <h3>{{ trans('home.apply_jobs') }}</h3>
-                                
+
                                 <div class="step">{{ trans('home.step_3') }}</div>
                             </div>
                         </div>
@@ -345,11 +348,11 @@
                         </div> -->
                     </div>
                 </div>
-            </div>    
+            </div>
 
             <div class="container-fluid">
                 <div class="top-category-slides owl-carousel owl-theme">
-                    @foreach($services as $service)                        
+                    @foreach($services as $service)
                         <div class="top-category-card">
                             <div class="category-image">
                                 <img src="{{$service->getFirstMediaUrl('services')}}" alt="image">
@@ -372,7 +375,7 @@
                         <div class="partner-image">
                             <div class="row align-items-center">
 
-                                @foreach($home->getMedia('Partner')->take(6) as $img)                                    
+                                @foreach($home->getMedia('Partner')->take(6) as $img)
                                     <div class="col-lg-4 col-sm-4 col-md-4 col-6">
                                         <div class="image" data-aos="fade-left" data-aos-delay="90" data-aos-duration="900">
                                             <a href="#" target="_blank"><img src="{{$img->getUrl()}}" alt="{{ $img->name }}"></a>
@@ -411,7 +414,7 @@
                     </div>
                 </div>
 
-              
+
                 <div class="review-slides owl-carousel owl-theme">
 
                     @foreach($partenerReviews as $partener)
@@ -494,5 +497,9 @@
             top: 5px;
             color: var(--main-color);
             }
+        .about-content h2 {
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
     </style>
 @endpush

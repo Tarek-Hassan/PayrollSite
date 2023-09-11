@@ -40,8 +40,8 @@ class FeaturedCandidateSeeder extends Seeder
                 'tag1_ar' => 'احتساب الرواتب',
                 'tag1_en' => 'Payroll Calculations',
                 'tag2_icon' => 'ri-pie-chart-line',
-                'tag2_ar' => 'التقارير و التسويات المالية',
-                'tag2_en' => 'Reports & Consulidations',
+                'tag2_ar' => 'التقارير وتحليل البيانات',
+                'tag2_en' => 'Reports & analysis',
                 'is_published'=>1,
             ],
             [

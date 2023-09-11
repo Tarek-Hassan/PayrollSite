@@ -35,7 +35,7 @@ return [
     'works' => 'Works',
     'view_all_Services'=>'View All Services',
     'job_applicants'=>'Job Applicants',
-    // 
+    //
     'create_account' => 'Create Account',
     'step_1' => 'Step 1',
     'submit_resume' => 'Submit Resume',
@@ -62,14 +62,14 @@ return [
         'email_icon'=>'E',
         //comingSoonMsg
         'coming_soon'=>'We Are Launching Soon',
-        
+
         'content'=>'Content',
         'about_first'=>'About First Egyptian',
         'to_read'=>'Minute Read',
-        'payroll_oper'=>'Payroll Operations',
+        'payroll_oper'=>'Payroll Calculator',
         'gross'=>'Gross',
         'net'=>'Net',
-        
+
         'grossSalary'=>'Gross Salary',
         'netSalary'=>'Net Salary',
         'incomeTax'=>'Income Tax',

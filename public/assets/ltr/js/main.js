@@ -1,9 +1,9 @@
 jQuery(function ($) {
     'use strict';
-	
+
 	// Header Sticky
 	$(window).on('scroll',function() {
-		if ($(this).scrollTop() > 150){  
+		if ($(this).scrollTop() > 150){
 			$('.navbar-area').addClass("is-sticky");
 		}
 		else{
@@ -101,7 +101,7 @@ jQuery(function ($) {
 		margin: 30,
 		autoplayHoverPause: true,
 		autoplay: true,
-		
+
 		responsive: {
 			0: {
 				items: 1
@@ -182,7 +182,7 @@ jQuery(function ($) {
 		margin: 25,
 		autoplayHoverPause: true,
 		autoplay: true,
-		
+
 		responsive: {
 			0: {
 				items: 2
@@ -211,7 +211,7 @@ jQuery(function ($) {
 		if (event.isDefaultPrevented()) {
 			formErrorSub();
 			submitMSGSub(false, "Please enter your email correctly.");
-		} 
+		}
 		else {
 			// event.preventDefault();
 		}
@@ -240,7 +240,7 @@ jQuery(function ($) {
 	function submitMSGSub(valid, msg){
 		if(valid){
 			var msgClasses = "validation-success";
-		} 
+		}
 		else {
 			var msgClasses = "validation-danger";
 		}
@@ -252,14 +252,14 @@ jQuery(function ($) {
 	// 	callback: callbackFunction
 	// });
 
-	// Count Time 
+	// Count Time
 	function makeTimer() {
-		var endTime = new Date("September 20, 2025 17:00:00 PDT");			
+		var endTime = new Date("September 20, 2025 17:00:00 PDT");
 		var endTime = (Date.parse(endTime)) / 1000;
 		var now = new Date();
 		var now = (Date.parse(now) / 1000);
 		var timeLeft = endTime - now;
-		var days = Math.floor(timeLeft / 86400); 
+		var days = Math.floor(timeLeft / 86400);
 		var hours = Math.floor((timeLeft - (days * 86400)) / 3600);
 		var minutes = Math.floor((timeLeft - (days * 86400) - (hours * 3600 )) / 60);
 		var seconds = Math.floor((timeLeft - (days * 86400) - (hours * 3600) - (minutes * 60)));
@@ -281,7 +281,7 @@ jQuery(function ($) {
 		btnDown = spinner.find('.minus-btn'),
 		min = input.attr('min'),
 		max = input.attr('max');
-		
+
 		btnUp.on('click', function() {
 			var oldValue = parseFloat(input.val());
 			if (oldValue >= max) {
@@ -322,7 +322,7 @@ jQuery(function ($) {
 		e.preventDefault();
 		$(".job-more-item:hidden").slice(0, 3).slideDown();
 	});
-	
+
 	// Candidates More Item
 	$(".candidates-more-item").slice(0, 6).show();
 		$("#loadmore").on('click', function (e) {
@@ -414,11 +414,11 @@ jQuery(function ($) {
 		var scrolled = $(window).scrollTop();
 		if (scrolled > 600) $('.go-top').addClass('active');
 		if (scrolled < 600) $('.go-top').removeClass('active');
-	});  
+	});
 	$('.go-top').on('click', function() {
 		$("html, body").animate({ scrollTop: "0" },  500);
 	});
-	
+
 	// Preloader
 	$(window).on('load', function() {
 		$('.preloader-area').fadeOut();
@@ -449,9 +449,9 @@ function toggleTheme() {
 (function () {
     if (localStorage.getItem('eeza_theme') === 'theme-dark') {
         setTheme('theme-dark');
-        document.getElementById('slider').checked = false;
+        // document.getElementById('slider').checked = false;
     } else {
         setTheme('theme-light');
-      document.getElementById('slider').checked = true;
+    //   document.getElementById('slider').checked = true;
     }
 })();
