@@ -220,7 +220,7 @@
 
 
                             <div class="featured-candidates-btn">
-                                <a href="#services">{{ trans('home.view_all_Services') }}<i class="flaticon-right-arrow"></i></a>
+                                <a href="#services"  style="color:#005C85;">{{ trans('home.view_all_Services') }}<i class="flaticon-right-arrow"></i></a>
                             </div>
                         </div>
                     </div>
@@ -241,7 +241,7 @@
                                 <h4>{{$home->job_applicants_title}}</h4>
                                 <p>{{$home->job_applicants_content}}</p>
                                 <div class="overview-content-btn pt-100">
-                                    <a href="{{route('PayrollCalculations')}}" target="_blank">{{ trans('home.payroll_oper') }}<i class="flaticon-right-arrow"></i></a>
+                                    <a href="{{route('PayrollCalculations')}}" target="_blank" style="color:#005C85;" >{{ trans('home.payroll_oper') }}<i class="flaticon-right-arrow"></i></a>
                                 </div>
                             </div>
                         </div>
