@@ -42,7 +42,7 @@ class UpdateIncomeTax extends Command
     public function handle()
     {
         try {
-            $url = 'http://185.227.111.191:8085/api/income-tax';
+            $url = 'http://185.227.111.191:8085/api/income-taxSite';
             $client = new \GuzzleHttp\Client();
             $response = $client->request('GET', $url);
             $data = json_decode($response->getBody()->getContents(), true);
