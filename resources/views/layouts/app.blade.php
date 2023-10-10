@@ -272,7 +272,7 @@
 
             <div class="copyright-area">
                 <div class="container">
-                    <p><i class="ri-copyright-line"></i> <script>document.write(new Date().getFullYear())</script> {{ trans('home.company_first') }}. {{ trans('home.rights') }} <a href="https://envytheme.com/" target="_blank">{{ trans('home.company_name') }}</a></p>
+                    <p><i class="ri-copyright-line"></i> {{  Date("Y") .trans('home.company_first') }}. {{ trans('home.rights') }} <a href="https://envytheme.com/" target="_blank">{{ trans('home.company_name') }}</a></p>
                 </div>
             </div>
         </footer>

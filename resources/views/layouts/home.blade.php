@@ -44,7 +44,7 @@
                 <div class="row align-items-center">
                     <div class="col-lg-6 col-md-12">
                         <div class="about-image" data-aos="fade-right" data-aos-delay="50" data-aos-duration="500">
-                            <img src="{{asset("assets/$dir/images/about/about-1.png")}}" alt="image">
+                            <img src="{{asset("assets/ltr/images/about/about-1.webp")}}" alt="image">
                         </div>
                     </div>
 
@@ -93,7 +93,7 @@
                 <div class="row align-items-center">
                     <div class="col-lg-7 col-md-12">
                         <div class="play-video-image">
-                            <img src="{{asset("assets/$dir/images/play-video/play-video.jpeg")}}" alt="image">
+                            <img src="{{asset("assets/ltr/images/play-video/play-video.webp")}}" alt="image">
                         </div>
                     </div>
 
@@ -137,37 +137,37 @@
                             <div class="row align-items-center">
                                 <div class="col-lg-4 col-sm-4 col-md-4 col-4">
                                     <div class="image" data-aos="fade-{{$reverse_direction}}" data-aos-delay="50" data-aos-duration="500">
-                                        <img src="{{asset("assets/$dir/images/featured-candidates/01.png")}}" alt="image">
+                                        <img src="{{asset("assets/ltr/images/featured-candidates/01.webp")}}" alt="image">
                                     </div>
                                 </div>
 
                                 <div class="col-lg-4 col-sm-4 col-md-4 col-4">
                                     <div class="image" data-aos="fade-down" data-aos-delay="70" data-aos-duration="700">
-                                        <img src="{{asset("assets/$dir/images/featured-candidates/02.png")}}" alt="image">
+                                        <img src="{{asset("assets/ltr/images/featured-candidates/02.webp")}}" alt="image">
                                     </div>
                                 </div>
 
                                 <div class="col-lg-4 col-sm-4 col-md-4 col-4">
                                     <div class="image" data-aos="fade-{{$direction}}" data-aos-delay="90" data-aos-duration="900">
-                                        <img src="{{asset("assets/$dir/images/featured-candidates/03.png")}}" alt="image">
+                                        <img src="{{asset("assets/ltr/images/featured-candidates/03.webp")}}" alt="image">
                                     </div>
                                 </div>
 
                                 <div class="col-lg-4 col-sm-4 col-md-4 col-4">
                                     <div class="image" data-aos="fade-{{$reverse_direction}}" data-aos-delay="70" data-aos-duration="700">
-                                        <img src="{{asset("assets/$dir/images/featured-candidates/04.png")}}" alt="image">
+                                        <img src="{{asset("assets/ltr/images/featured-candidates/04.webp")}}" alt="image">
                                     </div>
                                 </div>
 
                                 <div class="col-lg-4 col-sm-4 col-md-4 col-4">
                                     <div class="image" data-aos="fade-up" data-aos-delay="80" data-aos-duration="800">
-                                        <img src="{{asset("assets/$dir/images/featured-candidates/05.png")}}" alt="image">
+                                        <img src="{{asset("assets/ltr/images/featured-candidates/05.webp")}}" alt="image">
                                     </div>
                                 </div>
 
                                 <div class="col-lg-4 col-sm-4 col-md-4 col-4">
                                     <div class="image" data-aos="fade-{{$reverse_direction}}" data-aos-delay="90" data-aos-duration="900">
-                                        <img src="{{asset("assets/$dir/images/featured-candidates/06.png")}}" alt="image">
+                                        <img src="{{asset("assets/ltr/images/featured-candidates/06.webp")}}" alt="image">
                                     </div>
                                 </div>
                             </div>
